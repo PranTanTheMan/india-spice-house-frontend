@@ -7,8 +7,9 @@ import {
   Stack,
   Text,
   Image,
+  Spacer,
 } from "@chakra-ui/react";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaFacebookSquare, FaYelp, FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -31,7 +32,7 @@ export default function Footer() {
                 as="a"
                 href="#"
                 aria-label="LinkedIn"
-                icon={<FaLinkedin size={"25px"} />}
+                icon={<FaFacebookSquare size={"25px"} />}
                 color={"#ffa500"}
                 transition={"all 0.2s ease"}
                 _hover={{ color: "#d77c1c" }}
@@ -40,7 +41,7 @@ export default function Footer() {
                 as="a"
                 href="#"
                 aria-label="GitHub"
-                icon={<FaGithub size={"25px"} />}
+                icon={<FaYelp size={"25px"} />}
                 color={"#ffa500"}
                 _hover={{ color: "#d77c1c" }}
               />
@@ -48,16 +49,30 @@ export default function Footer() {
                 as="a"
                 href="#"
                 aria-label="Twitter"
-                icon={<FaTwitter size={"25px"} />}
+                icon={<FaWhatsapp size={"25px"} />}
                 color={"#ffa500"}
                 _hover={{ color: "#d77c1c" }}
               />
             </ButtonGroup>
           </Stack>
-          <Text fontSize="sm" color="white">
-            &copy; {new Date().getFullYear()} India Spice House. All rights
-            reserved.
-          </Text>
+          <Stack
+            flexDir={"row"}
+            justifyContent={"space-between"}
+            alignItems={"center"}
+          >
+            <Text fontSize="sm" color="white">
+              &copy; {new Date().getFullYear()} India Spice House. All rights
+              reserved. Designed by PRSM.
+            </Text>
+            <Stack direction={"column"} spacing={6}>
+              <Link href="tel:9529427510" fontSize="sm" color="white">
+                Grocery: (952) 942-7510
+              </Link>
+              <Link href="tel:9529428010" fontSize="sm" color="white">
+                Restaurant: (952) 942-8010
+              </Link>
+            </Stack>
+          </Stack>
         </Stack>
         {/* </Container> */}
       </Box>

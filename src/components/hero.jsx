@@ -17,7 +17,7 @@ import Slideshow from "./slideshow";
 export default function Hero() {
   return (
     <>
-      <Box bg="gray.800" minH={"90vh"} position="relative">
+      <Box bg="gray.800" minH={"100vh"} position="relative">
         <Center
           textAlign={"center !important"}
           py="32"
@@ -25,7 +25,10 @@ export default function Hero() {
           zIndex={1}
         >
           <Flex color="white">
-            <Box w={{ base: "sm", md: "3xl", lg: "4xl" }} mt="100px">
+            <Box
+              w={{ base: "sm", md: "3xl", lg: "4xl" }}
+              mt={{ base: "100px", lg: "250px" }}
+            >
               <Heading as="h1" size="3xl" fontWeight="extrabold">
                 Build relationship with the your customers
               </Heading>

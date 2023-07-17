@@ -19,7 +19,6 @@ const ToggleIcon = (props) => {
       color="fg.muted"
       className="group"
       data-active={active ? "" : undefined}
-      s
       as="span"
       display="block"
       w="1.5rem"

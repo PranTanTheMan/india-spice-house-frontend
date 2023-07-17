@@ -16,7 +16,7 @@ export default function Navbar() {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
   const mobileNavbar = useDisclosure();
   return (
-    <Box bg="#D92D26" position="relative" zIndex="tooltip">
+    <Box bg="#D92D26" position="fixed" zIndex="tooltip" w={"100%"}>
       <Box py={5} px={20}>
         <HStack justify="space-between">
           <Link href="/">

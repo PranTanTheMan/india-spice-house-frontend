@@ -5,15 +5,30 @@ import {
   DrawerContent,
   Stack,
 } from "@chakra-ui/react";
+import Link from "next/link";
+
+export const navItems = [
+  { name: "Menu", href: "#menu" },
+  { name: "Specials", href: "#specials" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
+];
 
 export const MobileDrawer = (props) => (
   <Drawer placement="top" {...props}>
     <DrawerContent>
       <DrawerBody mt="6.5rem">
         <Stack spacing="6" align="stretch">
-          {["menu", "specials", "about", "contact"].map((item) => (
-            <Button key={item} size="lg" variant="text" colorScheme="gray">
-              {item}
+          {navItems.map((item) => (
+            <Button
+              as={"a"}
+              href={item.href}
+              key={item}
+              size="lg"
+              variant="text"
+              colorScheme="gray"
+            >
+              {item.name}
             </Button>
           ))}
           <Button

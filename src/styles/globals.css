@@ -1,3 +1,9 @@
+* {
+  scroll-behavior: smooth;
+  scroll-snap-type: proximity;
+  scroll-padding-top: 50px;
+}
+
 /* Style the scrollbar track */
 ::-webkit-scrollbar-track {
   background-color: #dc7979; /* Set the background color of the track */

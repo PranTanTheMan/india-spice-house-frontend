@@ -15,6 +15,14 @@ import Link from "next/link";
 export default function Navbar() {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
   const mobileNavbar = useDisclosure();
+
+  const navItems = [
+    { name: "menu", href: "#menu" },
+    { name: "specials", href: "#specials" },
+    { name: "about", href: "/about" },
+    { name: "contact", href: "/contact" },
+  ];
+
   return (
     <Box bg="#D92D26" position="fixed" zIndex="tooltip" w={"100%"}>
       <Box py={5} px={20}>
@@ -36,16 +44,16 @@ export default function Navbar() {
                 colorScheme="gray"
                 spacing="0"
               >
-                {["menu", "specials", "about", "contact"].map((item) => (
+                {navItems.map((item) => (
                   <Button
                     _hover={{ color: "#238d1a", transform: "scale(1.1)" }}
                     color={"white"}
                     key={item}
                     as={"a"}
-                    href={`#${item}`}
+                    href={item.href}
                     textTransform={"capitalize"}
                   >
-                    {item}
+                    {item.name}
                   </Button>
                 ))}
               </ButtonGroup>

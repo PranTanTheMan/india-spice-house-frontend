@@ -152,9 +152,20 @@ const ContactInfo = () => {
   );
 };
 
+import Head from "next/head";
+
 export default function Contact() {
   return (
     <>
+      <Head>
+        <title>India Spice House | Contact</title>
+        <meta
+          name="description"
+          content="India Spice house is a indian grocery and restaurant located in Eden Prairie"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/logo.png" />
+      </Head>
       <Center transform={"translateY(220px)"} mb={"50px"}>
         <Stack spacing={6} direction="row" align="center">
           <IconButton

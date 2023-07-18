@@ -30,7 +30,7 @@ export default function Hero() {
               mt={{ base: "100px", lg: "250px" }}
             >
               <Heading as="h1" size="3xl" fontWeight="extrabold">
-                Build relationship with the your customers
+                India Spice House, home of the spices
               </Heading>
               <Text fontSize={{ md: "2xl" }} mt="4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

@@ -52,7 +52,7 @@ export default function PopularItemsCard() {
                 fontSize="3xl"
                 textTransform="uppercase"
               >
-                NIKE AIR
+                Popular_item
               </chakra.h1>
               <chakra.p mt={1} fontSize="sm" color="gray.600">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi

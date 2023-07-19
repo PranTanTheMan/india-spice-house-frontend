@@ -33,8 +33,9 @@ export default function Hero() {
                 India Spice House, home of the spices
               </Heading>
               <Text fontSize={{ md: "2xl" }} mt="4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                India Spice House has a variety of appetizers, entrees, and lots
+                of sweet desserts. We offer catering services as well as hosting
+                events.
               </Text>
               <Stack
                 direction={{ base: "column", md: "row" }}
@@ -44,7 +45,8 @@ export default function Hero() {
               >
                 <Button
                   as="a"
-                  href="#"
+                  href="https://order.toasttab.com/online/india-spice-house-8445-joiner-way"
+                  target="_blank"
                   colorScheme="red"
                   px="8"
                   rounded="full"

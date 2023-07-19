@@ -4,7 +4,6 @@ import {
   Center,
   Flex,
   Heading,
-  SimpleGrid,
   Stack,
   Text,
   Accordion,
@@ -13,21 +12,10 @@ import {
   AccordionPanel,
   AccordionIcon,
   Spacer,
+  chakra,
 } from "@chakra-ui/react";
 
 export default function BusinessHoursLocation() {
-  const data = [
-    {
-      id: 1,
-      title: "Grocery",
-      content: "10:00am - 10:00pm",
-    },
-    {
-      id: 2,
-      title: "Restaurant",
-      content: `10:00am - 10:00am 10:00am - 10:00pm `,
-    },
-  ];
   return (
     <>
       <Center mb={"10rem"} mt={"7rem"} flexDirection={"column"}>
@@ -43,35 +31,116 @@ export default function BusinessHoursLocation() {
           >
             <Heading pb={"0px"}>Business Hours</Heading>
             <Box w="70px" h="2px" bg="black" mt={"3px"} mb={"20px"} />
-            {data.map((item) => (
-              <Accordion allowToggle key={item}>
-                <AccordionItem
-                  w={"300px"}
-                  key={item.id}
-                  bg={"#e1e1e1"}
-                  borderRadius={10}
-                  py={"3px"}
-                >
-                  <AccordionButton>
-                    <Box key={item.id} as="span" textAlign="left">
-                      {item.title}
-                    </Box>
-                    <Spacer />
-                    <AccordionIcon />
-                  </AccordionButton>
 
-                  <AccordionPanel
-                    borderBottomRadius={10}
-                    bg={"#f3f3f3"}
-                    maxW={"350px"}
-                    pb={4}
-                    key={item.id}
+            <Accordion allowMultiple>
+              <AccordionItem
+                w={"330px"}
+                bg={"#e1e1e1"}
+                borderRadius={10}
+                py={"3px"}
+                mb={"10px"}
+              >
+                <AccordionButton>
+                  <Box as="span" textAlign="left">
+                    Grocery
+                  </Box>
+                  <Spacer />
+                  <AccordionIcon />
+                </AccordionButton>
+
+                <AccordionPanel
+                  borderBottomRadius={10}
+                  bg={"#f3f3f3"}
+                  maxW={"350px"}
+                  pb={4}
+                >
+                  <Text textAlign="left">
+                    <chakra.span fontWeight={"bold"}>
+                      Monday - Friday:{" "}
+                    </chakra.span>
+                    11:00 AM - 9:00 PM
+                  </Text>
+                  <br />
+                  <Text textAlign="left">
+                    <chakra.span fontWeight={"bold"}>
+                      Saturday - Sunday:{" "}
+                    </chakra.span>
+                    10:00 AM - 9:00 PM
+                  </Text>
+                </AccordionPanel>
+              </AccordionItem>
+              <AccordionItem
+                w={"330px"}
+                bg={"#e1e1e1"}
+                borderRadius={10}
+                py={"3px"}
+              >
+                <AccordionButton>
+                  <Box as="span" textAlign="left">
+                    Restaurant
+                  </Box>
+                  <Spacer />
+                  <AccordionIcon />
+                </AccordionButton>
+
+                <AccordionPanel
+                  borderBottomRadius={10}
+                  bg={"#f3f3f3"}
+                  maxW={"350px"}
+                  pb={4}
+                >
+                  <Heading
+                    textAlign={"center"}
+                    fontWeight={"bold"}
+                    fontSize={"lg"}
+                    pb={"10px"}
                   >
-                    Times
-                  </AccordionPanel>
-                </AccordionItem>
-              </Accordion>
-            ))}
+                    Lunch
+                  </Heading>
+                  <Stack>
+                    <Text textAlign="left">
+                      <chakra.span fontWeight={"bold"}>
+                        Monday - Friday:{" "}
+                      </chakra.span>
+                      11:30 AM - 2:30 PM
+                    </Text>
+                    <Text textAlign="left">
+                      <chakra.span fontWeight={"bold"}>
+                        Satuday - Sunday:{" "}
+                      </chakra.span>
+                      11:30 AM - 3:30 PM
+                    </Text>
+                  </Stack>
+                  <Heading
+                    textAlign={"center"}
+                    fontWeight={"bold"}
+                    fontSize={"lg"}
+                    pb={"10px"}
+                    pt={"20px"}
+                  >
+                    Dinner
+                  </Heading>
+                  <Stack>
+                    <Text textAlign="left">
+                      <chakra.span fontWeight={"bold"}>
+                        Monday - Thursday:{" "}
+                      </chakra.span>
+                      5:00 PM - 9:30 PM
+                    </Text>
+                    <Text textAlign="left">
+                      <chakra.span fontWeight={"bold"}>
+                        Friday - Satuday:{" "}
+                      </chakra.span>
+                      5:00 PM - 10:00 PM
+                    </Text>
+                    <Text textAlign="left">
+                      <chakra.span fontWeight={"bold"}>Sunday: </chakra.span>
+                      5:00 PM - 9:00 PM
+                    </Text>
+                  </Stack>
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
           </Stack>
           <Stack
             alignItems={"center"}
@@ -85,7 +154,6 @@ export default function BusinessHoursLocation() {
               width="300"
               height="300"
               style={{ border: 0 }}
-              allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>

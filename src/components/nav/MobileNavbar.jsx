@@ -1,5 +1,6 @@
 import {
   Button,
+  Center,
   Drawer,
   DrawerBody,
   DrawerContent,
@@ -9,6 +10,7 @@ import Link from "next/link";
 
 export const navItems = [
   { name: "Menu", href: "#menu" },
+  { name: "Catering", href: "#", target: "_self" },
   { name: "Specials", href: "#specials" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
@@ -31,15 +33,24 @@ export const MobileDrawer = (props) => (
               {item.name}
             </Button>
           ))}
-          <Button
-            variant={"unstyled"}
-            outline={"1.5px solid green"}
-            color={"black"}
-            _hover={{ bg: "#238d1a", color: "white" }}
-            transition={"all 0.3s ease"}
+          <Link
+            target="_blank"
+            href="https://order.toasttab.com/online/india-spice-house-8445-joiner-way"
           >
-            Order Now
-          </Button>
+            <Center
+              variant={"unstyled"}
+              outline={"1.5px solid green"}
+              color={"black"}
+              _hover={{ bg: "#238d1a", color: "white" }}
+              transition={"all 0.3s ease"}
+              textAlign={"center"}
+              borderRadius={"lg"}
+              py={"10px"}
+              fontWeight={"semibold"}
+            >
+              Order Now
+            </Center>
+          </Link>
         </Stack>
       </DrawerBody>
     </DrawerContent>

@@ -17,10 +17,15 @@ export default function Navbar() {
   const mobileNavbar = useDisclosure();
 
   const navItems = [
-    { name: "menu", href: "#menu" },
-    { name: "specials", href: "#specials" },
-    { name: "about", href: "/about" },
-    { name: "contact", href: "/contact" },
+    {
+      name: "menu",
+      href: "https://order.toasttab.com/online/india-spice-house-8445-joiner-way",
+      target: "_blank",
+    },
+    { name: "catering", href: "#", target: "_self" },
+    { name: "specials", href: "#specials", target: "_self" },
+    { name: "about", href: "/about", target: "_self" },
+    { name: "contact", href: "/contact", target: "_self" },
   ];
 
   return (
@@ -52,6 +57,7 @@ export default function Navbar() {
                     as={"a"}
                     href={item.href}
                     textTransform={"capitalize"}
+                    target={item.target}
                   >
                     {item.name}
                   </Button>
@@ -59,11 +65,15 @@ export default function Navbar() {
               </ButtonGroup>
               <Button
                 px={7}
+                pt={"7px"}
                 variant={"unstyled"}
                 outline={"1.5px solid green"}
                 color={"white"}
                 _hover={{ bg: "#238d1a", color: "white" }}
                 transition={"all 0.3s ease"}
+                as={"a"}
+                href="https://order.toasttab.com/online/india-spice-house-8445-joiner-way"
+                target="_blank"
               >
                 Order Now
               </Button>

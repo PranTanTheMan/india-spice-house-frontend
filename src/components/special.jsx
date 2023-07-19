@@ -44,8 +44,7 @@ export default function Special() {
               }}
               bgSize="cover"
               style={{
-                backgroundImage:
-                  "url('https://images.unsplash.com/photo-1593642532400-2682810df593?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80')",
+                backgroundImage: "url('/Gallery/4.jpg')",
               }}
             ></Box>
           </Box>
@@ -71,7 +70,7 @@ export default function Special() {
             >
               Special Item
             </chakra.h2>
-            <chakra.p mt={4} color="gray.600">
+            <chakra.p mt={4} color="gray.600" w="500px" h="100px">
               Special Item Description Lorem ipsum dolor sit amet, consectetur
               adipisicing elit. Esse a neque aliquam eligendi labore autem,
               architecto distinctio ea minus. Aliquam aliquid ea, facilis minima
@@ -92,6 +91,8 @@ export default function Special() {
                   bg: "transparent",
                 }}
                 transition={"all 0.3s ease"}
+                href="https://order.toasttab.com/online/india-spice-house-8445-joiner-way"
+                target="_blank"
               >
                 Order Now
               </Link>

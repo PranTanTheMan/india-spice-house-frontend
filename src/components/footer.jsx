@@ -30,7 +30,8 @@ export default function Footer() {
             <ButtonGroup variant={"tertiary.accent"}>
               <IconButton
                 as="a"
-                href="#"
+                href="https://www.facebook.com/indiaspicehouseep"
+                target="_blank"
                 aria-label="LinkedIn"
                 icon={<FaFacebookSquare size={"25px"} />}
                 color={"#ffa500"}
@@ -39,7 +40,8 @@ export default function Footer() {
               />
               <IconButton
                 as="a"
-                href="#"
+                href="https://www.yelp.com/biz/india-spice-house-restaurant-eden-prairie"
+                target="_blank"
                 aria-label="GitHub"
                 icon={<FaYelp size={"25px"} />}
                 color={"#ffa500"}
@@ -47,7 +49,8 @@ export default function Footer() {
               />
               <IconButton
                 as="a"
-                href="#"
+                href="https://wa.me/16122937478"
+                target="_blank"
                 aria-label="Twitter"
                 icon={<FaWhatsapp size={"25px"} />}
                 color={"#ffa500"}

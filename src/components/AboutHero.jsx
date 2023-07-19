@@ -92,7 +92,7 @@ export default function AboutHero() {
           >
             <Button
               as="a"
-              href="#"
+              href="https://order.toasttab.com/online/india-spice-house-8445-joiner-way"
               colorScheme="red"
               px="8"
               rounded="full"

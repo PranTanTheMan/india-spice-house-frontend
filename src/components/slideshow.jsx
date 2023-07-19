@@ -2,8 +2,14 @@ import { useState, useEffect } from "react";
 import { Box, Image } from "@chakra-ui/react";
 
 const Slideshow = () => {
-  // array of image URLs sounds like urine
-  const images = ["1.jpg", "2.jpg", "3.jpg"];
+  // array of image URLs going up to
+  const images = [
+    "/Gallery/1.jpg",
+    "/Gallery/2.jpg",
+    "/Gallery/3.jpg",
+    "/Gallery/4.jpg",
+    "/Gallery/5.jpg",
+  ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -14,7 +20,7 @@ const Slideshow = () => {
     };
 
     // Set an interval to change the image every 5.5 seconds
-    const interval = setInterval(updateImageIndex, 5500);
+    const interval = setInterval(updateImageIndex, 4500);
 
     // Clean up the interval on component unmount
     return () => clearInterval(interval);

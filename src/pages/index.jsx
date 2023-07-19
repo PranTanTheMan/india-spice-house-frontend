@@ -28,6 +28,8 @@ export default function Home() {
       </Head>
       {/* Components */}
       <Hero />
+
+      <Delivery />
       <Center
         scrollMarginTop={"140px"}
         id="specials"
@@ -40,7 +42,7 @@ export default function Home() {
       </Center>
       <Special />
       <PopularItems />
-      <Delivery />
+
       <BusinessHoursLocation />
     </>
   );

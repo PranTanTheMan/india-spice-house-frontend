@@ -8,27 +8,21 @@ export default function PopularItemsCard() {
       name: "NIKE AIR",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem sequi illum facere recusandae voluptatibus",
-      image:
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80",
-      price: 129,
+      image: "/Gallery/1.jpg",
     },
     {
       id: 2,
       name: "NIKE AIR",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem sequi illum facere recusandae voluptatibus",
-      image:
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80",
-      price: 40,
+      image: "/Gallery/5.jpg",
     },
     {
       id: 3,
       name: "NIKE AIR",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem sequi illum facere recusandae voluptatibus",
-      image:
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80",
-      price: 15,
+      image: "/Gallery/3.jpg",
     },
   ];
 
@@ -65,8 +59,8 @@ export default function PopularItemsCard() {
               w="full"
               fit="cover"
               mt={2}
-              src="1.jpg"
-              alt="NIKE AIR"
+              src={product.image}
+              alt="popular-item"
             />
 
             <Flex
@@ -84,7 +78,8 @@ export default function PopularItemsCard() {
               _hover={{ bg: "#238d1a" }}
               transition={"all .3s ease"}
               as={"a"}
-              href="#"
+              href="https://order.toasttab.com/online/india-spice-house-8445-joiner-way"
+              target="_blank"
             >
               Order Now
             </Flex>

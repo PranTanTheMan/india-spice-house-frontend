@@ -46,6 +46,7 @@ export default function Special() {
               style={{
                 backgroundImage: "url('/Gallery/4.jpg')",
               }}
+              position={"relative"}
             ></Box>
           </Box>
 
@@ -70,7 +71,12 @@ export default function Special() {
             >
               Special Item
             </chakra.h2>
-            <chakra.p mt={4} color="gray.600" w="500px" h="100px">
+            <chakra.p
+              mt={4}
+              color="gray.600"
+              w={{ base: "300px", md: "500px" }}
+              h={{ base: "160px", md: "100px" }}
+            >
               Special Item Description Lorem ipsum dolor sit amet, consectetur
               adipisicing elit. Esse a neque aliquam eligendi labore autem,
               architecto distinctio ea minus. Aliquam aliquid ea, facilis minima

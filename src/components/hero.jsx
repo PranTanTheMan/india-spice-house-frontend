@@ -29,10 +29,15 @@ export default function Hero() {
               w={{ base: "sm", md: "3xl", lg: "4xl" }}
               mt={{ base: "100px", lg: "250px" }}
             >
-              <Heading as="h1" size="3xl" fontWeight="extrabold">
+              <Heading
+                as="h1"
+                size={{ base: "xl", md: "3xl" }}
+                className="hero-title"
+                fontWeight="extrabold"
+              >
                 India Spice House, home of the spices
               </Heading>
-              <Text fontSize={{ md: "2xl" }} mt="4">
+              <Text className="hero-subtitle" fontSize={{ md: "2xl" }} mt="4">
                 India Spice House has a variety of appetizers, entrees, and lots
                 of sweet desserts. We offer catering services as well as hosting
                 events.
@@ -53,6 +58,7 @@ export default function Hero() {
                   size="lg"
                   fontSize="md"
                   fontWeight="bold"
+                  className="hero-btn"
                 >
                   <span style={{ paddingRight: "10px" }}>
                     Eat with us today

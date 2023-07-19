@@ -33,3 +33,24 @@
 ::-webkit-scrollbar {
   width: 5px;
 }
+
+@media screen and (max-width: 400px) {
+  .hero-btn {
+    width: 240px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .hero-title {
+    width: 300px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .hero-subtitle {
+    width: 300px;
+    margin: 0 auto;
+  }
+}

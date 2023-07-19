@@ -20,7 +20,7 @@ export default function BusinessHoursLocation() {
     <>
       <Center mb={"10rem"} mt={"7rem"} flexDirection={"column"}>
         <Center mb={"5rem"} mt={"7rem"} flexDirection={"column"}>
-          <Heading>Business Hours & Location</Heading>
+          <Heading textAlign={"center"}>Business Hours & Location</Heading>
           <Box w="70px" h="2px" bg="black" mt={"10px"} />
         </Center>
         <Flex flexWrap={"wrap"} justifyContent={"center"} w={"100%"}>

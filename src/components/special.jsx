@@ -49,7 +49,6 @@ export default function Special() {
               position={"relative"}
             ></Box>
           </Box>
-
           <Box
             py={12}
             px={6}

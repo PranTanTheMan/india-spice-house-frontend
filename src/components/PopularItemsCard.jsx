@@ -65,7 +65,7 @@ export default function PopularItemsCard() {
               w="full"
               fit="cover"
               mt={2}
-              src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=320&q=80"
+              src="1.jpg"
               alt="NIKE AIR"
             />
 

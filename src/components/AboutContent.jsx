@@ -6,6 +6,7 @@ import {
   Text,
   Image,
   SimpleGrid,
+  Link,
 } from "@chakra-ui/react";
 
 import React from "react";
@@ -112,11 +113,11 @@ export default function AboutContent() {
             Spices and Herbs, meticulously cooked to create mouth lingering
             dishes. Each dish has its own distinctive flavor & aromas, which
             cannot come from any curry powder in the world. Our food is not just
-            'Spicy' or 'Curry'. It all depends what you wish to eat! We prepare
-            great tasting authentic Indian food with all exquisite Kebabs, North
-            Indian delights, best of South Indian cuisine and our exotic Indo
-            Chinese dishes for the discerning palate! along with a large range
-            of Indian sweets.
+            &apos;Spicy&apos; or &apos;Curry&apos;. It all depends what you wish
+            to eat! We prepare great tasting authentic Indian food with all
+            exquisite Kebabs, North Indian delights, best of South Indian
+            cuisine and our exotic Indo Chinese dishes for the discerning
+            palate! along with a large range of Indian sweets.
             <br />
             <br />
             Besides restaurant India Spice House also provides Catering service
@@ -127,12 +128,20 @@ export default function AboutContent() {
             meetings or conferences with lunch served in a buffet style.
             <br />
             <br />
-            We serve lunch buffet Monday - Saturday, where you can enjoy "all
-            you can eat" extensive varieties of India food. If you are new to
-            Indian food, we would suggest you try out great selection of items
-            in our daily lunch buffet. Our dinner service is ala-carte. You have
-            a wide range of varieties to choose from an extensive menu we
-            created to please taste buds of our customers.
+            We serve lunch buffet Monday - Saturday, where you can enjoy
+            &quot;all you can eat&quot; extensive varieties of India food. If
+            you are new to Indian food, we would suggest you try out great
+            selection of items in our daily lunch buffet. Our dinner service is
+            ala-carte. You have a wide range of varieties to choose from an
+            extensive menu we created to please taste buds of our customers.{" "}
+            {""}
+            <Link
+              fontWeight={"semibold"}
+              color={"#D92D26"}
+              href="#philosophy-vision"
+            >
+              Our Philosophy & Vision
+            </Link>
           </Text>
           <Image
             src="/3.jpg"
@@ -141,10 +150,13 @@ export default function AboutContent() {
             w={{ base: "250px", lg: "550px" }}
             ml={{ base: "0", lg: "70px !important" }}
             mx={{ base: "auto", lg: "0" }}
+            alt="image"
           />
         </Stack>
       </Flex>
       <SimpleGrid
+        scrollMarginTop={"75px"}
+        id="philosophy-vision"
         gap={{
           base: "4",
           md: "6",
@@ -162,6 +174,7 @@ export default function AboutContent() {
           <SimpleGrid column={2}>
             {philisophy.map((item) => (
               <Box
+                key={item.title}
                 bgGradient="linear-gradient(45deg, #ffa500, #D92D26)"
                 borderRadius="md"
                 p={4}
@@ -184,6 +197,7 @@ export default function AboutContent() {
           <SimpleGrid column={2} row={3}>
             {vision.map((item) => (
               <Box
+                key={item.title}
                 bgGradient="linear-gradient(45deg, #ffa500, #D92D26)"
                 borderRadius="md"
                 p={4}

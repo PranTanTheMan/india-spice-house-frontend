@@ -44,7 +44,7 @@ export default function BusinessHoursLocation() {
             <Heading pb={"0px"}>Business Hours</Heading>
             <Box w="70px" h="2px" bg="black" mt={"3px"} mb={"20px"} />
             {data.map((item) => (
-              <Accordion allowToggle>
+              <Accordion allowToggle key={item}>
                 <AccordionItem
                   w={"300px"}
                   key={item.id}

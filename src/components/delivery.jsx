@@ -79,6 +79,7 @@ export default function Delivery() {
                   md: "10",
                 }}
                 maxW="180px"
+                alt="image"
               />
             </Center>
           ))}

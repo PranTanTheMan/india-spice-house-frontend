@@ -40,6 +40,7 @@ export default function AboutHero() {
             md: "12",
           }}
           ml={{ base: 0, lg: "150px" }}
+          className="aboutHero"
         >
           <Stack spacing="4">
             <Stack
@@ -59,8 +60,9 @@ export default function AboutHero() {
                   base: "2xl",
                   md: "4xl",
                 }}
+                textAlign={{ base: "center", md: "left" }}
               >
-                Learn what makes the best.{" "}
+                Learn what makes the best.
                 <chakra.span
                   bgGradient="linear-gradient(70deg, #D92D26, #ffa500)"
                   bgClip="text"
@@ -74,7 +76,9 @@ export default function AboutHero() {
                   base: "lg",
                   md: "xl",
                 }}
-                color="fg.muted"
+                w={{ base: "70%", md: "75%" }}
+                textAlign={{ base: "center", md: "left" }}
+                mx={{ base: "auto", md: "0" }}
               >
                 From Catering events, a variety of specials and a wide range of
                 grocery items, we have it all.
@@ -123,7 +127,7 @@ export default function AboutHero() {
             lg: "absolute",
           }}
           right="0"
-          bottom="0"
+          bottom="-20"
           w={{
             base: "full",
             lg: "50%",
@@ -138,7 +142,12 @@ export default function AboutHero() {
             },
           }}
         >
-          <Img boxSize="full" objectFit="cover" src="/1.jpg" alt="werk" />
+          <Img
+            boxSize="full"
+            objectFit="cover"
+            src="/Gallery/1.jpg"
+            alt="werk"
+          />
           {/* Add slideshow that includes catering, event stuff, grocery, tandoor specials, etc */}
         </Box>
       </Stack>

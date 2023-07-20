@@ -15,6 +15,13 @@ import {
   Link,
   ButtonGroup,
   IconButton,
+  Text,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Spacer,
 } from "@chakra-ui/react";
 import { HiChevronRight } from "react-icons/hi";
 import {
@@ -29,7 +36,7 @@ import {
 const ContactForm = () => {
   return (
     <Flex p={4} alignItems={"center"}>
-      <chakra.form w={{ base: "325px", lg: "325px" }}>
+      <chakra.form w={{ base: "305px", sm: "365px" }}>
         <Flex direction="column" spacing={4} w={"100%"}>
           <FormControl>
             <FormLabel>Name</FormLabel>
@@ -99,53 +106,155 @@ const ContactInfo = () => {
   return (
     <>
       <Flex
-        display={{ base: "none", lg: "flex" }}
+        // display={{ base: "none", lg: "flex" }}
         direction="column"
         justify="center"
         align="center"
-        mt={10}
-        ml={"50px"}
+        // ml={"50px"}
         mb={"50px"}
       >
         <Stack spacing={10}>
           <Flex
             align="center"
-            bgGradient="linear-gradient(45deg, #ffcc00, #ff5733)"
+            bg={"#e1e1e1"}
             rounded="md"
             p={4}
             w="300px"
+            justifyContent={"center"}
+            gap={1}
           >
-            <Box as={FaEnvelope} boxSize={6} color="white" mr={2} />
-            <chakra.span color="white" fontWeight="bold">
-              Email: info@example.com
-            </chakra.span>
+            <Box as={FaEnvelope} boxSize={6} color="black" mr={2} />
+            <Text fontWeight="bold">Email:</Text>
+            <Link href="mailto:indiaspicehouseep@gmail.com">
+              indiaspicehouseep@gmail.com
+            </Link>
           </Flex>
 
           <Flex
             align="center"
-            bgGradient="linear-gradient(45deg, #ffcc00, #ff5733)"
+            bg={"#e1e1e1"}
             rounded="md"
             p={4}
             w="300px"
+            gap={1}
           >
-            <Box as={FaPhone} boxSize={6} color="white" mr={2} />
-            <chakra.span color="white" fontWeight="bold">
-              Phone: +1 123-456-7890
-            </chakra.span>
+            <Box as={FaPhone} boxSize={5} color="black" mr={2} />
+            <Text fontWeight="bold">Phone:</Text>
+            <Link href="tel:9529428010">(952) 942-8010</Link>
           </Flex>
+        </Stack>
+        <Stack mt={"30px"} flexDir={"column"} alignItems={"center"}>
+          <Accordion allowMultiple>
+            <AccordionItem
+              w={{ base: "300px", sm: "300px" }}
+              bg={"#e1e1e1"}
+              borderRadius={10}
+              py={"3px"}
+              margin={"0 auto"}
+            >
+              <AccordionButton>
+                <Box as="span" textAlign="left">
+                  Grocery
+                </Box>
+                <Spacer />
+                <AccordionIcon />
+              </AccordionButton>
 
-          <Flex
-            align="center"
-            bgGradient="linear-gradient(45deg, #ffcc00, #ff5733)"
-            rounded="md"
-            p={4}
-            w="300px"
-          >
-            <Box as={FaClock} boxSize={6} color="white" mr={2} />
-            <chakra.span color="white" fontWeight="bold">
-              Working Hours: Mon-Fri 9am-6pm
-            </chakra.span>
-          </Flex>
+              <AccordionPanel
+                borderBottomRadius={10}
+                bg={"#f3f3f3"}
+                maxW={"350px"}
+                pb={4}
+              >
+                <Text textAlign="left">
+                  <chakra.span fontWeight={"bold"}>
+                    Monday - Friday:{" "}
+                  </chakra.span>
+                  11:00 AM - 9:00 PM
+                </Text>
+                <br />
+                <Text textAlign="left">
+                  <chakra.span fontWeight={"bold"}>
+                    Saturday - Sunday:{" "}
+                  </chakra.span>
+                  10:00 AM - 9:00 PM
+                </Text>
+              </AccordionPanel>
+            </AccordionItem>
+            <Box h={"20px"} />
+            <AccordionItem
+              bg={"#e1e1e1"}
+              borderRadius={10}
+              py={"3px"}
+              w={{ base: "300px", sm: "300px" }}
+              margin={"0 auto"}
+            >
+              <AccordionButton>
+                <Box as="span" textAlign="left">
+                  Restaurant
+                </Box>
+                <Spacer />
+                <AccordionIcon />
+              </AccordionButton>
+
+              <AccordionPanel
+                borderBottomRadius={10}
+                bg={"#f3f3f3"}
+                maxW={"350px"}
+                pb={4}
+              >
+                <Heading
+                  textAlign={"center"}
+                  fontWeight={"bold"}
+                  fontSize={"lg"}
+                  pb={"10px"}
+                >
+                  Lunch
+                </Heading>
+                <Stack>
+                  <Text textAlign="left">
+                    <chakra.span fontWeight={"bold"}>
+                      Monday - Friday:{" "}
+                    </chakra.span>
+                    11:30 AM - 2:30 PM
+                  </Text>
+                  <Text textAlign="left">
+                    <chakra.span fontWeight={"bold"}>
+                      Satuday - Sunday:{" "}
+                    </chakra.span>
+                    11:30 AM - 3:30 PM
+                  </Text>
+                </Stack>
+                <Heading
+                  textAlign={"center"}
+                  fontWeight={"bold"}
+                  fontSize={"lg"}
+                  pb={"10px"}
+                  pt={"20px"}
+                >
+                  Dinner
+                </Heading>
+                <Stack>
+                  <Text textAlign="left">
+                    <chakra.span fontWeight={"bold"}>
+                      Monday - Thursday:{" "}
+                    </chakra.span>
+                    5:00 PM - 9:30 PM
+                  </Text>
+                  <Text textAlign="left">
+                    <chakra.span fontWeight={"bold"}>
+                      Friday - Satuday:{" "}
+                    </chakra.span>
+                    5:00 PM - 10:00 PM
+                  </Text>
+                  <Text textAlign="left">
+                    <chakra.span fontWeight={"bold"}>Sunday: </chakra.span>
+                    5:00 PM - 9:00 PM
+                  </Text>
+                </Stack>
+              </AccordionPanel>
+            </AccordionItem>
+          </Accordion>
         </Stack>
       </Flex>
     </>
@@ -167,11 +276,16 @@ export default function Contact() {
         <link rel="icon" href="/logo.png" />
       </Head>
       <Center transform={"translateY(220px)"} mb={"50px"}>
-        <Stack spacing={6} direction="row" align="center">
+        <Stack
+          spacing={6}
+          direction="row"
+          align="center"
+          className="icon-group"
+        >
           <IconButton
             as="a"
-            href="#"
-            aria-label="LinkedIn"
+            href="https://www.facebook.com/indiaspicehouseep"
+            aria-label="Facebook"
             icon={<FaFacebookSquare size={"65px"} />}
             color={"#ffa500"}
             transition={"all 0.2s ease"}
@@ -180,8 +294,8 @@ export default function Contact() {
           />
           <IconButton
             as="a"
-            href="#"
-            aria-label="GitHub"
+            href="https://www.yelp.com/biz/india-spice-house-restaurant-eden-prairie"
+            aria-label="Google Reviews"
             icon={<FaYelp size={"65px"} />}
             color={"#ffa500"}
             _hover={{ color: "#d77c1c" }}
@@ -189,8 +303,8 @@ export default function Contact() {
           />
           <IconButton
             as="a"
-            href="#"
-            aria-label="Twitter"
+            href="https://wa.me/16122937478"
+            aria-label="Whatsapp"
             icon={<FaWhatsapp size={"65px"} />}
             color={"#ffa500"}
             _hover={{ color: "#d77c1c" }}
@@ -201,10 +315,18 @@ export default function Contact() {
       <Flex
         direction={"row"}
         justifyContent="center"
-        align="center"
+        alignItems="center"
         minHeight="100vh"
       >
-        <ContactForm />
+        {/* <ContactForm /> */}
+
+        {/* <script
+          src="https://static.elfsight.com/platform/platform.js"
+          data-use-service-core
+          defer
+        ></script>
+        <div class="elfsight-app-857618ef-fd65-49e3-b1d9-915a4fcd6275"></div> */}
+
         <ContactInfo />
       </Flex>
     </>

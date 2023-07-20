@@ -8,10 +8,11 @@ export default function App({ Component, pageProps }) {
       <ChakraProvider>
         <Layout>
           <Component {...pageProps} />
-          <script
+
+          {/* <script
             src="//code.tidio.co/zbbipf0hzh3epsuhiuiklvcz2ylwowis.js"
             async
-          ></script>
+          ></script> */}
         </Layout>
       </ChakraProvider>
 

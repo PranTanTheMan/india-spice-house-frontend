@@ -80,19 +80,27 @@ export default function AboutContent() {
         justifyContent={"flex-start"}
         flexDirection={"column"}
         mt={"100px"}
+        py={"40px"}
       >
-        <Stack flexDirection={"row"} alignItems={"center"} pb={"15px"}>
+        <Stack
+          flexDirection={"row"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          pb={"15px"}
+        >
           <Heading>Who we are</Heading>
           <Box w="70px" h="2px" bg="black" mt={"10px"} />
         </Stack>
         <Stack
           flexDirection={{ base: "column", md: "row" }}
           alignItems={"center"}
+          justifyContent={"center"}
         >
           <Text
-            textAlign={{ base: "center", lg: "left" }}
+            textAlign={{ base: "center", lg: "center" }}
             mx={{ base: "auto", lg: "0" }}
-            w={{ base: "375px", lg: "900px" }}
+            w={{ base: "315px", lg: "900px" }}
+            id="content-about"
           >
             India Spice House is a gourmet Indian cuisine located in Eden
             Prairie and serving twin cities since 2008, India Spice House has
@@ -143,15 +151,6 @@ export default function AboutContent() {
               Our Philosophy & Vision
             </Link>
           </Text>
-          <Image
-            src="/3.jpg"
-            borderRadius={"full"}
-            h={{ base: "250px", lg: "550px" }}
-            w={{ base: "250px", lg: "550px" }}
-            ml={{ base: "0", lg: "70px !important" }}
-            mx={{ base: "auto", lg: "0" }}
-            alt="image"
-          />
         </Stack>
       </Flex>
       <SimpleGrid

@@ -11,6 +11,7 @@ import {
 import { MobileDrawer } from "./MobileNavbar";
 import { ToggleButton } from "./ToggleButton";
 import Link from "next/link";
+import React, { useEffect } from "react";
 
 export default function Navbar() {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
@@ -23,7 +24,7 @@ export default function Navbar() {
       target: "_blank",
     },
     { name: "catering", href: "#", target: "_self" },
-    { name: "specials", href: "#specials", target: "_self" },
+    { name: "specials", href: "/", target: "_self" },
     { name: "about", href: "/about", target: "_self" },
     { name: "contact", href: "/contact", target: "_self" },
   ];
@@ -38,7 +39,7 @@ export default function Navbar() {
               alt="logo"
               boxSize="60px"
               transition={"all 0.35s ease "}
-              _hover={{ transform: "rotate(25deg) scale(1.05)" }}
+              cursor={"pointer"}
             />
           </Link>
           {isDesktop ? (
@@ -49,11 +50,11 @@ export default function Navbar() {
                 colorScheme="gray"
                 spacing="0"
               >
-                {navItems.map((item) => (
+                {navItems.map((item, index) => (
                   <Button
                     _hover={{ color: "#238d1a", transform: "scale(1.1)" }}
                     color={"white"}
-                    key={item}
+                    key={index}
                     as={"a"}
                     href={item.href}
                     textTransform={"capitalize"}

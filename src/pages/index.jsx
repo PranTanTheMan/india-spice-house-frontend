@@ -28,18 +28,8 @@ export default function Home() {
       </Head>
       {/* Components */}
       <Hero />
-
       <Delivery />
-      <Center
-        scrollMarginTop={"140px"}
-        id="specials"
-        mb={"2rem"}
-        mt={"7rem"}
-        flexDirection={"column"}
-      >
-        <Heading>Specials</Heading>
-        <Box w="70px" h="2px" bg="black" mt={"10px"} />
-      </Center>
+
       <Special />
       <PopularItems />
 

@@ -34,11 +34,11 @@ export default function BusinessHoursLocation() {
 
             <Accordion allowMultiple>
               <AccordionItem
-                w={"330px"}
+                w={{ base: "300px", sm: "330px" }}
                 bg={"#e1e1e1"}
                 borderRadius={10}
                 py={"3px"}
-                mb={"10px"}
+                margin={"0 auto"}
               >
                 <AccordionButton>
                   <Box as="span" textAlign="left">
@@ -69,11 +69,13 @@ export default function BusinessHoursLocation() {
                   </Text>
                 </AccordionPanel>
               </AccordionItem>
+              <Box h={"20px"} />
               <AccordionItem
-                w={"330px"}
                 bg={"#e1e1e1"}
                 borderRadius={10}
                 py={"3px"}
+                w={{ base: "300px", sm: "330px" }}
+                margin={"0 auto"}
               >
                 <AccordionButton>
                   <Box as="span" textAlign="left">

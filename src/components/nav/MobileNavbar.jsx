@@ -9,9 +9,12 @@ import {
 import Link from "next/link";
 
 export const navItems = [
-  { name: "Menu", href: "#menu" },
+  {
+    name: "Menu",
+    href: "https://order.toasttab.com/online/india-spice-house-8445-joiner-way",
+  },
   { name: "Catering", href: "#", target: "_self" },
-  { name: "Specials", href: "#specials" },
+  { name: "Specials", href: "/" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];

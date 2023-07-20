@@ -67,7 +67,7 @@ export default function Delivery() {
             md: 3,
           }}
           mb={"75px"}
-          mx={{ base: "0", lg: "350px" }}
+          mx={{ base: "0", lg: "150px" }}
         >
           {data.map((item) => (
             <Center

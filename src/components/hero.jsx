@@ -25,19 +25,24 @@ export default function Hero() {
           zIndex={1}
         >
           <Flex color="white">
-            <Box
-              w={{ base: "sm", md: "3xl", lg: "4xl" }}
-              mt={{ base: "100px", lg: "250px" }}
-            >
+            <Box className="hero-content" mt={{ base: "100px", lg: "250px" }}>
               <Heading
                 as="h1"
                 size={{ base: "xl", md: "3xl" }}
                 className="hero-title"
                 fontWeight="extrabold"
+                maxWidth={{ base: "100%", md: "80%" }}
+                mx="auto"
               >
                 India Spice House, home of the spices
               </Heading>
-              <Text className="hero-subtitle" fontSize={{ md: "2xl" }} mt="4">
+              <Text
+                className="hero-subtitle"
+                maxW={"500px"}
+                fontSize={{ md: "2xl" }}
+                mt="4"
+                mx="auto"
+              >
                 India Spice House has a variety of appetizers, entrees, and lots
                 of sweet desserts. We offer catering services as well as hosting
                 events.

@@ -1,110 +1,46 @@
 import React from "react";
-import { Box, Flex, Image, chakra, Link } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Heading,
+  useBreakpointValue,
+  Stack,
+  Text,
+  Flex,
+} from "@chakra-ui/react";
 
 export default function Special() {
   return (
     <>
-      <Flex
-        mb={"5rem"}
-        p={50}
-        w="full"
-        alignItems="center"
-        justifyContent="center"
+      <div id="fb-root"></div>
+      <script
+        async
+        defer
+        crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0"
+        nonce="F9yayCcL"
+      ></script>
+      <Center
+        scrollMarginTop={"140px"}
+        id="specials"
+        mb={"2rem"}
+        mt={"7rem"}
+        flexDirection={"column"}
       >
-        <Box
-          bg="white"
-          mx={{
-            lg: 8,
-          }}
-          display={{
-            lg: "flex",
-          }}
-          maxW={{
-            lg: "5xl",
-          }}
-          shadow={{
-            lg: "xl",
-          }}
-          rounded={{
-            lg: "lg",
-          }}
-        >
-          <Box
-            w={{
-              lg: "55rem",
-            }}
-          >
-            <Box
-              h={{
-                base: 64,
-                lg: "full",
-              }}
-              rounded={{
-                lg: "lg",
-              }}
-              bgSize="cover"
-              style={{
-                backgroundImage: "url('/Gallery/4.jpg')",
-              }}
-              position={"relative"}
-            ></Box>
-          </Box>
-          <Box
-            py={12}
-            px={6}
-            maxW={{
-              base: "xl",
-              lg: "5xl",
-            }}
-            w={{
-              lg: "55rem",
-            }}
-          >
-            <chakra.h2
-              fontSize={{
-                base: "2xl",
-                md: "3xl",
-              }}
-              color="gray.800"
-              fontWeight="bold"
-            >
-              Special Item
-            </chakra.h2>
-            <chakra.p
-              mt={4}
-              color="gray.600"
-              w={{ base: "300px", md: "500px" }}
-              h={{ base: "160px", md: "100px" }}
-            >
-              Special Item Description Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit. Esse a neque aliquam eligendi labore autem,
-              architecto distinctio ea minus. Aliquam aliquid ea, facilis minima
-              voluptatibus ullam porro architecto doloribus cum?
-            </chakra.p>
+        <Heading>Specials</Heading>
+        <Box w="70px" h="2px" bg="black" mt={"10px"} />
+      </Center>
 
-            <Box mt={8}>
-              <Link
-                bg="#238d1a"
-                color="gray.100"
-                px={5}
-                py={3}
-                fontWeight="semibold"
-                rounded="lg"
-                _hover={{
-                  border: "1.5px solid #238d1a",
-                  color: "black",
-                  bg: "transparent",
-                }}
-                transition={"all 0.3s ease"}
-                href="https://order.toasttab.com/online/india-spice-house-8445-joiner-way"
-                target="_blank"
-              >
-                Order Now
-              </Link>
-            </Box>
-          </Box>
-        </Box>
-      </Flex>
+      <Center w={"100%"} flexDirection={"column"}>
+        <iframe
+          src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Findiaspicehouseep&width=320&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+          width="320"
+          height="500"
+          style={{ border: "none", overflow: "hidden" }}
+          allowFullScreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        ></iframe>
+      </Center>
     </>
   );
 }

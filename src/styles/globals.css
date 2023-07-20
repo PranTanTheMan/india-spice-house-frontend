@@ -4,6 +4,12 @@
   scroll-padding-top: 50px;
 }
 
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
 /* Style the scrollbar track */
 ::-webkit-scrollbar-track {
   background-color: #dc7979; /* Set the background color of the track */
@@ -53,4 +59,64 @@
     width: 300px;
     margin: 0 auto;
   }
+}
+
+@media screen and (max-width: 320px) {
+  .hero-content {
+    width: 300px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .special-image {
+    width: 300px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .aboutHero {
+    padding-left: 50px;
+  }
+  #content-about {
+    width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 350px) {
+  #content-about {
+    width: 270px;
+    margin: 0 auto;
+  }
+}
+
+@keyframes rotateAndScale {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(25deg) scale(1.05);
+  }
+}
+
+.mobile-rotate-animation {
+  animation: rotateAndScale 0.35s ease forwards;
+}
+
+.fb-iframe:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 300px) and (max-width: 375px) {
+  .icon-group {
+    padding-bottom: 100px;
+  }
+}
+
+.special-box {
+  width: 400px;
+  height: 500px;
+  border: 1px solid #555;
 }

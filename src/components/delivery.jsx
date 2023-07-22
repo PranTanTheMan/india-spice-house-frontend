@@ -44,14 +44,13 @@ export default function Delivery() {
           Pick-up available{" "}
           <Link
             color="#238d1a"
-            href="https://order.online/store/india-spice-house-eden-prairie-27642/?hideModal=true&pickup=true"
+            href="https://order.toasttab.com/online/india-spice-house-8445-joiner-way"
             target="_blank"
           >
             here
           </Link>
         </Text>
       </Center>
-
       <Stack spacing="8" pb={"120px"}>
         <Text
           fontSize={{

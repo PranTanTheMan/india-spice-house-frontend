@@ -9,6 +9,8 @@ import {
   Box,
   SimpleGrid,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export default function Delivery() {
   const data = [
@@ -28,6 +30,11 @@ export default function Delivery() {
       href: "https://www.ubereats.com/store/india-spice-house-restaurant/Cy76oYVZTLWsC0uR9qOAnA?diningMode=DELIVERY&ps=1",
     },
   ];
+
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Trigger the animation only once
+    threshold: 0.1, // Trigger the animation when 10% of the component is in view
+  });
   return (
     <>
       <Center mb={"2rem"} mt={"12rem"} flexDirection={"column"}>

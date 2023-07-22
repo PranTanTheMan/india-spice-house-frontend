@@ -33,74 +33,74 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 
-const ContactForm = () => {
-  return (
-    <Flex p={4} alignItems={"center"}>
-      <chakra.form w={{ base: "305px", sm: "365px" }}>
-        <Flex direction="column" spacing={4} w={"100%"}>
-          <FormControl>
-            <FormLabel>Name</FormLabel>
-            <Input
-              border={"1px solid black"}
-              type="text"
-              placeholder="Enter your name"
-            />
-          </FormControl>
+// const ContactForm = () => {
+//   return (
+//     <Flex p={4} alignItems={"center"}>
+//       <chakra.form w={{ base: "305px", sm: "365px" }}>
+//         <Flex direction="column" spacing={4} w={"100%"}>
+//           <FormControl>
+//             <FormLabel>Name</FormLabel>
+//             <Input
+//               border={"1px solid black"}
+//               type="text"
+//               placeholder="Enter your name"
+//             />
+//           </FormControl>
 
-          <FormControl>
-            <FormLabel>Email</FormLabel>
-            <Input
-              border={"1px solid black"}
-              type="email"
-              placeholder="Enter your email"
-            />
-          </FormControl>
+//           <FormControl>
+//             <FormLabel>Email</FormLabel>
+//             <Input
+//               border={"1px solid black"}
+//               type="email"
+//               placeholder="Enter your email"
+//             />
+//           </FormControl>
 
-          <FormControl>
-            <FormLabel>Subject</FormLabel>
-            <Input
-              border={"1px solid black"}
-              type="text"
-              placeholder="Enter the subject"
-            />
-          </FormControl>
+//           <FormControl>
+//             <FormLabel>Subject</FormLabel>
+//             <Input
+//               border={"1px solid black"}
+//               type="text"
+//               placeholder="Enter the subject"
+//             />
+//           </FormControl>
 
-          <FormControl>
-            <FormLabel>Message</FormLabel>
-            <Textarea
-              border={"1px solid black"}
-              placeholder="Enter your message"
-              rows={4}
-            />
-          </FormControl>
+//           <FormControl>
+//             <FormLabel>Message</FormLabel>
+//             <Textarea
+//               border={"1px solid black"}
+//               placeholder="Enter your message"
+//               rows={4}
+//             />
+//           </FormControl>
 
-          <Button
-            as="a"
-            href="#"
-            colorScheme="red"
-            px="8"
-            rounded="full"
-            size="lg"
-            fontSize="md"
-            fontWeight="bold"
-            w={"230px"}
-            mt={"15px"}
-          >
-            <span style={{ paddingRight: "10px" }}>Send Message</span>
-            <HiChevronRight />
-          </Button>
-        </Flex>
-      </chakra.form>
-      <Box
-        ml={{ base: "0", lg: "50px !important" }}
-        w={{ base: "0", lg: "1px" }}
-        h={"250px"}
-        bg="black"
-        // mx="auto"
-      />
-    </Flex>
-  );
-};
+//           <Button
+//             as="a"
+//             href="#"
+//             colorScheme="red"
+//             px="8"
+//             rounded="full"
+//             size="lg"
+//             fontSize="md"
+//             fontWeight="bold"
+//             w={"230px"}
+//             mt={"15px"}
+//           >
+//             <span style={{ paddingRight: "10px" }}>Send Message</span>
+//             <HiChevronRight />
+//           </Button>
+//         </Flex>
+//       </chakra.form>
+//       <Box
+//         ml={{ base: "0", lg: "50px !important" }}
+//         w={{ base: "0", lg: "1px" }}
+//         h={"250px"}
+//         bg="black"
+//         // mx="auto"
+//       />
+//     </Flex>
+//   );
+// };
 
 const ContactInfo = () => {
   return (
@@ -119,7 +119,8 @@ const ContactInfo = () => {
             bg={"#e1e1e1"}
             rounded="md"
             p={4}
-            w="300px"
+            className="contact-info-box"
+            id="contact-info-email"
             justifyContent={"center"}
             gap={1}
           >
@@ -135,8 +136,8 @@ const ContactInfo = () => {
             bg={"#e1e1e1"}
             rounded="md"
             p={4}
-            w="300px"
             gap={1}
+            className="contact-info-box"
           >
             <Box as={FaPhone} boxSize={5} color="black" mr={2} />
             <Text fontWeight="bold">Phone:</Text>
@@ -146,7 +147,7 @@ const ContactInfo = () => {
         <Stack mt={"30px"} flexDir={"column"} alignItems={"center"}>
           <Accordion allowMultiple>
             <AccordionItem
-              w={{ base: "300px", sm: "300px" }}
+              className="contact-info-box"
               bg={"#e1e1e1"}
               borderRadius={10}
               py={"3px"}
@@ -186,7 +187,7 @@ const ContactInfo = () => {
               bg={"#e1e1e1"}
               borderRadius={10}
               py={"3px"}
-              w={{ base: "300px", sm: "300px" }}
+              className="contact-info-box"
               margin={"0 auto"}
             >
               <AccordionButton>
@@ -289,15 +290,6 @@ export default function Contact() {
             icon={<FaFacebookSquare size={"65px"} />}
             color={"#ffa500"}
             transition={"all 0.2s ease"}
-            _hover={{ color: "#d77c1c" }}
-            bg={"none"}
-          />
-          <IconButton
-            as="a"
-            href="https://www.yelp.com/biz/india-spice-house-restaurant-eden-prairie"
-            aria-label="Google Reviews"
-            icon={<FaYelp size={"65px"} />}
-            color={"#ffa500"}
             _hover={{ color: "#d77c1c" }}
             bg={"none"}
           />

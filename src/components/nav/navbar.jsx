@@ -11,12 +11,15 @@ import {
 import { MobileDrawer } from "./MobileNavbar";
 import { ToggleButton } from "./ToggleButton";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React from "react";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
   const mobileNavbar = useDisclosure();
 
+  const MotionImage = motion(Image);
+  const MotionButton = motion(Button);
   const navItems = [
     {
       name: "menu",
@@ -24,7 +27,7 @@ export default function Navbar() {
       target: "_blank",
     },
     { name: "catering", href: "#", target: "_self" },
-    { name: "specials", href: "/", target: "_self" },
+    { name: "specials", href: "/#specials", target: "_self" },
     { name: "about", href: "/about", target: "_self" },
     { name: "contact", href: "/contact", target: "_self" },
   ];
@@ -34,12 +37,14 @@ export default function Navbar() {
       <Box py={5} px={20}>
         <HStack justify="space-between">
           <Link href="/">
-            <Image
+            <MotionImage
               src="/logo.png"
               alt="logo"
               boxSize="60px"
-              transition={"all 0.35s ease "}
               cursor={"pointer"}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2, duration: 1 }}
             />
           </Link>
           {isDesktop ? (
@@ -51,7 +56,7 @@ export default function Navbar() {
                 spacing="0"
               >
                 {navItems.map((item, index) => (
-                  <Button
+                  <MotionButton
                     _hover={{ color: "#238d1a", transform: "scale(1.1)" }}
                     color={"white"}
                     key={index}
@@ -59,25 +64,34 @@ export default function Navbar() {
                     href={item.href}
                     textTransform={"capitalize"}
                     target={item.target}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.3 + index * 0.2, duration: 1 }}
                   >
                     {item.name}
-                  </Button>
+                  </MotionButton>
                 ))}
               </ButtonGroup>
-              <Button
+              <MotionButton
                 px={7}
                 pt={"7px"}
                 variant={"unstyled"}
                 outline={"1.5px solid green"}
                 color={"white"}
-                _hover={{ bg: "#238d1a", color: "white" }}
-                transition={"all 0.3s ease"}
+                _hover={{
+                  bg: "#238d1a",
+                  color: "white",
+                  transition: "all 0.3s ease",
+                }}
                 as={"a"}
                 href="https://order.toasttab.com/online/india-spice-house-8445-joiner-way"
                 target="_blank"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8, duration: 1 }}
               >
                 Order Now
-              </Button>
+              </MotionButton>
             </HStack>
           ) : (
             <>

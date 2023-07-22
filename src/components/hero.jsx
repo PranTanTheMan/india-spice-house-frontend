@@ -14,7 +14,12 @@ import { HiChevronRight } from "react-icons/hi";
 
 import Slideshow from "./slideshow";
 
+import { motion } from "framer-motion";
+
 export default function Hero() {
+  const MotionHeading = motion(Heading);
+  const MotionText = motion(Text);
+  const MotionButton = motion(Button);
   return (
     <>
       <Box bg="gray.800" minH={"100vh"} position="relative">
@@ -25,35 +30,41 @@ export default function Hero() {
           zIndex={1}
         >
           <Flex color="white">
-            <Box className="hero-content" mt={{ base: "100px", lg: "250px" }}>
-              <Heading
+            <Box className="hero-content" mt={{ base: "100px", lg: "150px" }}>
+              <MotionHeading
                 as="h1"
                 size={{ base: "xl", md: "3xl" }}
                 className="hero-title"
                 fontWeight="extrabold"
                 maxWidth={{ base: "100%", md: "80%" }}
                 mx="auto"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 1 }}
               >
                 India Spice House, home of the spices
-              </Heading>
-              <Text
+              </MotionHeading>
+              <MotionText
                 className="hero-subtitle"
                 maxW={"500px"}
                 fontSize={{ md: "2xl" }}
                 mt="4"
                 mx="auto"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 1 }}
               >
                 India Spice House has a variety of appetizers, entrees, and lots
                 of sweet desserts. We offer catering services as well as hosting
                 events.
-              </Text>
+              </MotionText>
               <Stack
                 direction={{ base: "column", md: "row" }}
                 mt="10"
                 spacing="4"
                 justifyContent={"center"}
               >
-                <Button
+                <MotionButton
                   as="a"
                   href="https://order.toasttab.com/online/india-spice-house-8445-joiner-way"
                   target="_blank"
@@ -64,12 +75,15 @@ export default function Hero() {
                   fontSize="md"
                   fontWeight="bold"
                   className="hero-btn"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6, duration: 1 }}
                 >
                   <span style={{ paddingRight: "10px" }}>
                     Eat with us today
                   </span>
                   <HiChevronRight />
-                </Button>
+                </MotionButton>
               </Stack>
             </Box>
           </Flex>

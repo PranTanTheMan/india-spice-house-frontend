@@ -5,23 +5,22 @@ export default function PopularItemsCard() {
   const products = [
     {
       id: 1,
-      name: "NIKE AIR",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem sequi illum facere recusandae voluptatibus",
+      name: "Garlic Naan",
+      description: "unleavened flat bread mixed with garlic, baked in tandoor.",
       image: "/Gallery/1.jpg",
     },
     {
       id: 2,
-      name: "NIKE AIR",
+      name: "Butter Chicken",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem sequi illum facere recusandae voluptatibus",
+        "Deliciously tender chicken, delicately cooked in a rich and velvety buttery cream sauce.",
       image: "/Gallery/5.jpg",
     },
     {
       id: 3,
-      name: "NIKE AIR",
+      name: "Hyderbad Dum Biryani",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem sequi illum facere recusandae voluptatibus",
+        "Herb-spiced meat/vegetables with saffron basmati dum rice, Hyderabadi style.",
       image: "/Gallery/3.jpg",
     },
   ];
@@ -43,14 +42,13 @@ export default function PopularItemsCard() {
               <chakra.h1
                 color="gray.800"
                 fontWeight="bold"
-                fontSize="3xl"
+                fontSize="22px"
                 textTransform="uppercase"
               >
-                Popular_item
+                {product.name}
               </chakra.h1>
               <chakra.p mt={1} fontSize="sm" color="gray.600">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
-                quos quidem sequi illum facere recusandae voluptatibus
+                {product.description}
               </chakra.p>
             </Box>
 

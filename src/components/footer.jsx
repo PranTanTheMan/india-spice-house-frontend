@@ -32,21 +32,13 @@ export default function Footer() {
                 as="a"
                 href="https://www.facebook.com/indiaspicehouseep"
                 target="_blank"
-                aria-label="LinkedIn"
+                aria-label="Face"
                 icon={<FaFacebookSquare size={"25px"} />}
                 color={"#ffa500"}
                 transition={"all 0.2s ease"}
                 _hover={{ color: "#d77c1c" }}
               />
-              <IconButton
-                as="a"
-                href="https://www.yelp.com/biz/india-spice-house-restaurant-eden-prairie"
-                target="_blank"
-                aria-label="GitHub"
-                icon={<FaYelp size={"25px"} />}
-                color={"#ffa500"}
-                _hover={{ color: "#d77c1c" }}
-              />
+
               <IconButton
                 as="a"
                 href="https://wa.me/16122937478"
@@ -59,7 +51,7 @@ export default function Footer() {
             </ButtonGroup>
           </Stack>
           <Stack
-            flexDir={"row"}
+            flexDir={{ base: "column", lg: "row" }}
             justifyContent={"space-between"}
             alignItems={"center"}
           >

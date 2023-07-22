@@ -7,19 +7,13 @@ import {
   Stack,
   Text,
   Flex,
+  Image,
 } from "@chakra-ui/react";
+import { FacebookProvider, EmbeddedPost } from "react-facebook";
 
 export default function Special() {
   return (
     <>
-      <div id="fb-root"></div>
-      <script
-        async
-        defer
-        crossorigin="anonymous"
-        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0"
-        nonce="F9yayCcL"
-      ></script>
       <Center
         scrollMarginTop={"140px"}
         id="specials"
@@ -32,12 +26,32 @@ export default function Special() {
       </Center>
 
       <Center w={"100%"} flexDirection={"column"}>
+        {/* <Box
+          mx={"auto"}
+          w={"100%"}
+          maxW={"600px"}
+          h={"400px"}
+          border={"1px solid red"}
+          dropShadow={"2xl"}
+        >
+          <Image
+            src="/Gallery/1.jpg"
+            alt="Specials"
+            objectFit="cover"
+            layout="fill"
+          />
+          <Text>Specials today!</Text>
+          <Text>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non
+            quibusdam voluptatibus consectetur labore laborum beatae laboriosam,
+            veritatis nihil, eum culpa unde architecto quas doloremque
+            dignissimos libero explicabo sed modi dolor?
+          </Text>
+        </Box> */}
         <iframe
-          src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Findiaspicehouseep&width=320&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+          src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Findiaspicehouseep&tabs=timeline&width=320&height=700&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=770204758187734"
           width="320"
-          height="500"
-          style={{ border: "none", overflow: "hidden" }}
-          allowFullScreen="true"
+          height="700"
           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
         ></iframe>
       </Center>

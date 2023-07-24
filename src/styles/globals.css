@@ -135,6 +135,39 @@ body {
   }
 }
 
+@media screen and (min-width: 300px) and (max-width: 320px) {
+  .contact-container {
+    margin-top: 145px !important;
+    margin-bottom: 45px;
+  }
+  .contact-large-container {
+    min-height: 100vh;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contact-container {
+    margin-top: 95px;
+    margin-bottom: 5px;
+  }
+  .contact-large-container {
+    min-height: 90vh;
+  }
+}
+
+@media screen and (min-width: 350px) and (max-width: 700px) {
+  .contact-content {
+    width: 350px;
+  }
+  .contact-content-container {
+    width: 350px;
+  }
+  .contact-large-container {
+    min-height: 120vh;
+    margin-bottom: -90px;
+  }
+}
+
 .special-box {
   width: 400px;
   height: 500px;

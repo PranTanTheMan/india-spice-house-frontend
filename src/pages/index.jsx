@@ -38,10 +38,8 @@ export default function Home() {
       {/* Components */}
       <Hero />
       <Delivery />
-
       <Special />
       <PopularItems />
-
       <BusinessHoursLocation />
     </>
   );

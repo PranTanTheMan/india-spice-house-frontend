@@ -19,6 +19,7 @@ import {
   InputGroup,
   InputLeftElement,
   Textarea,
+  Spacer,
 } from "@chakra-ui/react";
 import {
   MdPhone,
@@ -171,8 +172,7 @@ export default function contact() {
 
 export default function vContact() {
   return (
-    <VStack align={"stretch"} spacing={4}>
-      <Box p={9}></Box>
+    <VStack align={"stretch"}>
       <ContactForm />
     </VStack>
   );

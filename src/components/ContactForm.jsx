@@ -29,12 +29,9 @@ import {
 } from "react-icons/md";
 import { BsGithub, BsDiscord, BsPerson, BsWhatsapp } from "react-icons/bs";
 import NextLink from "next/link";
-import ContactForm from "@/components/ContactForm";
-import BusinessHoursLocation from "@/components/BusinessHoursLocation";
 //D92D26
 //238d1a
-/*
-export default function contact() {
+export default function ContactForm() {
   return (
     <Container bg="#FFFFFF" maxW="full" mt={0} centerContent overflow="hidden">
       <Flex>
@@ -166,14 +163,5 @@ export default function contact() {
         </Box>
       </Flex>
     </Container>
-  );
-} */
-
-export default function vContact() {
-  return (
-    <VStack align={"stretch"} spacing={4}>
-      <Box p={9}></Box>
-      <ContactForm />
-    </VStack>
   );
 }

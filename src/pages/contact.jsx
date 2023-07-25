@@ -51,16 +51,13 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch(
-      "http://https://india-spice-house-frontend.vercel.app//api/contact",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values),
-      }
-    );
+    await fetch("https://india-spice-house-frontend.vercel.app//api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    });
     setValues({ name: "", email: "", message: "" });
   };
 

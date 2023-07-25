@@ -1,15 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Box, Image } from "@chakra-ui/react";
 
 const Slideshow = () => {
   // array of image URLs going up to
-  const images = [
-    "/Gallery/1.jpg",
-    "/Gallery/2.jpg",
-    "/Gallery/3.jpg",
-    "/Gallery/4.jpg",
-    "/Gallery/5.jpg",
-  ];
+  const images = useMemo(
+    () => [
+      "/Gallery/1.jpg",
+      "/Gallery/2.jpg",
+      "/Gallery/3.jpg",
+      "/Gallery/4.jpg",
+      "/Gallery/5.jpg",
+    ],
+    []
+  );
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 

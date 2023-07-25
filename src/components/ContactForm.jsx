@@ -149,10 +149,9 @@ export default function ContactForm() {
                     <FormControl id="name">
                       <FormLabel>Your Name</FormLabel>
                       <InputGroup borderColor="#E0E1E7">
-                        <InputLeftElement
-                          pointerEvents="none"
-                          children={<BsPerson color="gray.800" />}
-                        />
+                        <InputLeftElement pointerEvents="none">
+                          <BsPerson color="gray.800" />
+                        </InputLeftElement>
                         <Input
                           type="text"
                           size="md"
@@ -168,10 +167,9 @@ export default function ContactForm() {
                     <FormControl id="email">
                       <FormLabel>Mail</FormLabel>
                       <InputGroup borderColor="#E0E1E7">
-                        <InputLeftElement
-                          pointerEvents="none"
-                          children={<MdOutlineEmail color="gray.800" />}
-                        />
+                        <InputLeftElement pointerEvents="none">
+                          <MdOutlineEmail color="gray.800" />
+                        </InputLeftElement>
                         <Input
                           type="email"
                           size="md"

@@ -16,8 +16,5 @@ export default async function handler(req, res) {
   };
   await sgMail.send(msg);
   console.log("email sent");
-  name = "";
-  email = "";
-  message = "";
   res.status(200).json({ success: true });
 }

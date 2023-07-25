@@ -7,6 +7,8 @@ import {
   Heading,
   Text,
   Container,
+  Center,
+  Button,
 } from "@chakra-ui/react";
 
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
@@ -20,7 +22,7 @@ const settings = {
   infinite: true,
   autoplay: true,
   speed: 500,
-  autoplaySpeed: 4000,
+  autoplaySpeed: 5500,
   slidesToShow: 1,
   slidesToScroll: 1,
 };
@@ -33,29 +35,27 @@ export default function Carousel() {
 
   const cards = [
     {
-      title: "Design Projects 1",
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
       image:
-        "https://images.unsplash.com/photo-1516796181074-bf453fbfa3e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
+        "https://cdn.discordapp.com/attachments/928498867153014847/1133262725536030802/64.jpg",
     },
     {
-      title: "Design Projects 2",
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
       image:
-        "https://images.unsplash.com/photo-1438183972690-6d4658e3290e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2274&q=80",
+        "https://cdn.discordapp.com/attachments/928498867153014847/1133262725821239326/65.jpg",
     },
     {
-      title: "Design Projects 3",
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
       image:
-        "https://images.unsplash.com/photo-1507237998874-b4d52d1dd655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
+        "https://cdn.discordapp.com/attachments/928498867153014847/1133262726240686120/66.jpg",
+    },
+    {
+      image:
+        "https://cdn.discordapp.com/attachments/928498867153014847/1133262726525886464/70.jpg",
     },
   ];
 
   return (
     <Box
       position={"relative"}
-      height={"900px"}
+      height={"100vh"}
       width={"full"}
       overflow={"hidden"}
     >
@@ -75,6 +75,7 @@ export default function Carousel() {
         aria-label="left-arrow"
         _hover={{ background: "#ffffff21" }}
         variant="ghost"
+        color={"whiteAlpha.700"}
         position="absolute"
         left={side}
         top={top}
@@ -88,6 +89,7 @@ export default function Carousel() {
       <IconButton
         aria-label="right-arrow"
         _hover={{ background: "#ffffff21" }}
+        color={"whiteAlpha.700"}
         variant="ghost"
         position="absolute"
         right={side}
@@ -108,25 +110,60 @@ export default function Carousel() {
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
             backgroundSize="cover"
-            backgroundImage={`url(${card.image})`}
+            backgroundImage={`linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${card.image})`}
           >
             {/* This is the block you need to change, to customize the caption */}
-            <Container size="container.lg" height="600px" position="relative">
-              <Stack
-                spacing={6}
-                w={"full"}
-                maxW={"lg"}
-                position="absolute"
-                top="50%"
-                transform="translate(0, -50%)"
+            <Container
+              size="container.lg"
+              height="600px"
+              position="relative"
+              zIndex={"999"}
+            >
+              <Box
+                justifyContent={"center"}
+                alignItems={"center"}
+                gap={4}
+                flexDirection={"column"}
+                pt={"330px"}
               >
-                <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
-                  {card.title}
+                <Heading
+                  color={"white"}
+                  fontSize={{ base: "3xl", md: "4xl", lg: "7xl" }}
+                >
+                  Catering & Private Events
                 </Heading>
-                <Text fontSize={{ base: "md", lg: "lg" }} color="GrayText">
-                  {card.text}
+                <Text
+                  fontSize={{ base: "md", lg: "lg" }}
+                  color="whiteAlpha.700"
+                >
+                  India Spice House takes your events to the next level with our
+                  catering services, specializing in a variety of Indian cuisine
+                  and live Tandoor cooking. We promise a unique, memorable
+                  experience for your guests.
                 </Text>
-              </Stack>
+                <Stack mt={"10px"} flexDirection={"row"} spacing={5}>
+                  <Button
+                    as={"a"}
+                    bgColor={"#D92D26"}
+                    color={"white"}
+                    transition={"all 0.3s ease"}
+                    _hover={{ background: "#ffffff21" }}
+                    href="#application"
+                  >
+                    Get Started
+                  </Button>
+                  <Button
+                    as={"a"}
+                    bgColor={"#D92D26"}
+                    color={"white"}
+                    transition={"all 0.3s ease"}
+                    _hover={{ background: "#ffffff21" }}
+                    href="#pdf"
+                  >
+                    Learn More
+                  </Button>
+                </Stack>
+              </Box>
             </Container>
           </Box>
         ))}

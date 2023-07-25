@@ -143,7 +143,7 @@ export default function ContactForm() {
               </Box>
             </WrapItem>
             <WrapItem>
-              <Box bg="white" borderRadius="lg">
+              <Box bg="white" borderRadius="lg" className={"form-box"}>
                 <Box m={8} color="#0B0E3F">
                   <VStack spacing={5}>
                     <FormControl id="name">

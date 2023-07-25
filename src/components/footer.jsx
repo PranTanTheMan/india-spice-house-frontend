@@ -51,7 +51,7 @@ export default function Footer() {
             </ButtonGroup>
           </Stack>
           <Stack
-            flexDir={{ base: "column", lg: "row" }}
+            flexDir={{ base: "column-reverse", lg: "row" }}
             justifyContent={"space-between"}
             alignItems={"center"}
           >

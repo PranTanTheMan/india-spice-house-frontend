@@ -2,6 +2,8 @@ import React from "react";
 
 import { useState } from "react";
 
+import { createRoot } from "react-dom/client";
+
 import {
   Container,
   Flex,
@@ -41,6 +43,7 @@ export default function Contact() {
     email: "",
     message: "",
   });
+
   const { name, email, message } = values;
 
   const handleChange = (e) =>
@@ -55,6 +58,7 @@ export default function Contact() {
       },
       body: JSON.stringify(values),
     });
+    setValues({ name: "", email: "", message: "" });
   };
 
   return (
@@ -75,19 +79,20 @@ export default function Contact() {
               <Box>
                 <Heading textAlign={"center"}>Contact</Heading>
                 <Text mt={{ sm: 3, md: 3, lg: 5 }} textAlign={"center"}>
-                  Fill up the form below to contact
+                  Fill the form to contact
                 </Text>
                 <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
                   <VStack pl={0} spacing={3} alignItems="flex-start">
                     <NextLink href="tel:9529428010" passHref>
                       <Button
+                        className="contact-mail-phone"
                         as="a"
                         size="md"
                         height="48px"
-                        width="200px"
+                        width="163px"
                         variant="ghost"
                         color="#FFFFFF"
-                        _hover={{ border: "2px solid #D92D26" }}
+                        _hover={{}}
                         leftIcon={<MdPhone color="#D92D26" size="20px" />}
                         textAlign={"center"}
                       >
@@ -99,13 +104,14 @@ export default function Contact() {
                       passHref
                     >
                       <Button
+                        className="contact-mail-phone"
                         as="a"
                         size="md"
                         height="48px"
                         width="300px"
                         variant="ghost"
                         color="#FFFFFF"
-                        _hover={{ border: "2px solid #D92D26" }}
+                        _hover={{ color: "333" }}
                         leftIcon={<MdEmail color="#D92D26" size="20px" />}
                         textAlign={"center"}
                       >
@@ -115,28 +121,34 @@ export default function Contact() {
                   </VStack>
                 </Box>
                 <HStack
-                  mt={{ lg: 10, md: 10 }}
-                  spacing={10}
-                  px={5}
+                  className="contact-icons"
+                  mt={{ lg: 10, md: 10, sm: 0 }}
+                  spacing={5}
+                  // px={{ base: 2, lg: 10 }}
+                  mb={{ base: -10 }}
+                  pl={"90px"}
                   alignItems="center"
                 >
                   <IconButton
+                    className="contact-icon"
                     as="a"
                     aria-label="facebook"
                     variant="ghost"
                     size="lg"
                     isRound={true}
-                    _hover={{ bg: "#D92D26" }}
+                    _hover={{ color: "#D92D26" }}
                     icon={<MdFacebook size="28px" />}
                     href="https://www.facebook.com/indiaspicehouseep"
                   />
+
                   <IconButton
+                    className="contact-icon"
                     as="a"
                     aria-label="whatsapp"
                     variant="ghost"
                     size="lg"
                     isRound={true}
-                    _hover={{ bg: "#D92D26" }}
+                    _hover={{ color: "#D92D26" }}
                     icon={<BsWhatsapp size="28px" />}
                     href="https://wa.me/16122937478"
                   />
@@ -144,50 +156,50 @@ export default function Contact() {
               </Box>
             </WrapItem>
             <WrapItem>
-              <Box bg="white" borderRadius="lg">
+              <Box className={"form-box"} bg="white" borderRadius="lg">
                 <Box m={8} color="#0B0E3F">
-                  <VStack spacing={5}>
-                    <form onSubmit={handleSubmit}>
-                      <div className="container">
-                        {/* <h3 style={{ textAlign: "center" }}>Contact Form</h3> */}
-                        <div className="input_container">
-                          <input
-                            type="text"
-                            name="name"
-                            value={name}
-                            onChange={handleChange}
-                            placeholder="Enter your name..."
-                            className="input"
-                            required
-                          />
-                        </div>
-                        <div className="input_container">
-                          <input
-                            type="email"
-                            name="email"
-                            value={email}
-                            onChange={handleChange}
-                            placeholder="Enter your email..."
-                            className="input"
-                            required
-                          />
-                        </div>
-                        <div className="input_container">
-                          <textarea
-                            name="message"
-                            value={message}
-                            onChange={handleChange}
-                            placeholder="Enter your message..."
-                            className="input"
-                            required
-                          />
-                        </div>
-                        <div className="btn_container">
-                          <button className="contact-btn">Send</button>
-                        </div>
+                  {/* <VStack spacing={5}> */}
+                  <form onSubmit={handleSubmit}>
+                    <div className="container">
+                      {/* <h3 style={{ textAlign: "center" }}>Contact Form</h3> */}
+                      <div className="input_container">
+                        <input
+                          type="text"
+                          name="name"
+                          value={name}
+                          onChange={handleChange}
+                          placeholder="Enter your name..."
+                          className="input"
+                          required
+                        />
                       </div>
-                    </form>
-                  </VStack>
+                      <div className="input_container">
+                        <input
+                          type="email"
+                          name="email"
+                          value={email}
+                          onChange={handleChange}
+                          placeholder="Enter your email..."
+                          className="input"
+                          required
+                        />
+                      </div>
+                      <div className="input_container">
+                        <textarea
+                          name="message"
+                          value={message}
+                          onChange={handleChange}
+                          placeholder="Enter your message..."
+                          className="input"
+                          required
+                        />
+                      </div>
+                      <div className="btn_container">
+                        <button className="contact-btn">Send</button>
+                      </div>
+                    </div>
+                  </form>
+                  {/* </VStack> */}
                 </Box>
               </Box>
             </WrapItem>

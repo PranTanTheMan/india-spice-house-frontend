@@ -1,326 +1,199 @@
 import React from "react";
+
+import { useState } from "react";
+
 import {
-  Box,
+  Container,
   Flex,
+  Box,
+  Heading,
+  Text,
+  IconButton,
+  Button,
+  VStack,
+  HStack,
+  Wrap,
+  WrapItem,
   FormControl,
   FormLabel,
   Input,
-  Textarea,
-  Button,
-  Stack,
-  Heading,
-  chakra,
-  Divider,
-  Center,
   Link,
-  ButtonGroup,
-  IconButton,
-  Text,
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
-  Spacer,
+  InputGroup,
+  InputLeftElement,
+  Textarea,
+  Center,
 } from "@chakra-ui/react";
-import { HiChevronRight } from "react-icons/hi";
 import {
-  FaPhone,
-  FaClock,
-  FaEnvelope,
-  FaFacebookSquare,
-  FaYelp,
-  FaWhatsapp,
-} from "react-icons/fa";
-
-// const ContactForm = () => {
-//   return (
-//     <Flex p={4} alignItems={"center"}>
-//       <chakra.form w={{ base: "305px", sm: "365px" }}>
-//         <Flex direction="column" spacing={4} w={"100%"}>
-//           <FormControl>
-//             <FormLabel>Name</FormLabel>
-//             <Input
-//               border={"1px solid black"}
-//               type="text"
-//               placeholder="Enter your name"
-//             />
-//           </FormControl>
-
-//           <FormControl>
-//             <FormLabel>Email</FormLabel>
-//             <Input
-//               border={"1px solid black"}
-//               type="email"
-//               placeholder="Enter your email"
-//             />
-//           </FormControl>
-
-//           <FormControl>
-//             <FormLabel>Subject</FormLabel>
-//             <Input
-//               border={"1px solid black"}
-//               type="text"
-//               placeholder="Enter the subject"
-//             />
-//           </FormControl>
-
-//           <FormControl>
-//             <FormLabel>Message</FormLabel>
-//             <Textarea
-//               border={"1px solid black"}
-//               placeholder="Enter your message"
-//               rows={4}
-//             />
-//           </FormControl>
-
-//           <Button
-//             as="a"
-//             href="#"
-//             colorScheme="red"
-//             px="8"
-//             rounded="full"
-//             size="lg"
-//             fontSize="md"
-//             fontWeight="bold"
-//             w={"230px"}
-//             mt={"15px"}
-//           >
-//             <span style={{ paddingRight: "10px" }}>Send Message</span>
-//             <HiChevronRight />
-//           </Button>
-//         </Flex>
-//       </chakra.form>
-//       <Box
-//         ml={{ base: "0", lg: "50px !important" }}
-//         w={{ base: "0", lg: "1px" }}
-//         h={"250px"}
-//         bg="black"
-//         // mx="auto"
-//       />
-//     </Flex>
-//   );
-// };
-
-const ContactInfo = () => {
-  return (
-    <>
-      <Flex
-        // display={{ base: "none", lg: "flex" }}
-        direction="column"
-        justify="center"
-        align="center"
-        // ml={"50px"}
-        mb={"50px"}
-      >
-        <Stack spacing={10}>
-          <Flex
-            align="center"
-            bg={"#e1e1e1"}
-            rounded="md"
-            p={4}
-            className="contact-info-box"
-            id="contact-info-email"
-            justifyContent={"center"}
-            gap={1}
-          >
-            <Box as={FaEnvelope} boxSize={6} color="black" mr={2} />
-            <Text fontWeight="bold">Email:</Text>
-            <Link href="mailto:indiaspicehouseep@gmail.com">
-              indiaspicehouseep@gmail.com
-            </Link>
-          </Flex>
-
-          <Flex
-            align="center"
-            bg={"#e1e1e1"}
-            rounded="md"
-            p={4}
-            gap={1}
-            className="contact-info-box"
-          >
-            <Box as={FaPhone} boxSize={5} color="black" mr={2} />
-            <Text fontWeight="bold">Phone:</Text>
-            <Link href="tel:9529428010">(952) 942-8010</Link>
-          </Flex>
-        </Stack>
-        <Stack mt={"30px"} flexDir={"column"} alignItems={"center"}>
-          <Accordion allowMultiple>
-            <AccordionItem
-              className="contact-info-box"
-              bg={"#e1e1e1"}
-              borderRadius={10}
-              py={"3px"}
-              margin={"0 auto"}
-            >
-              <AccordionButton>
-                <Box as="span" textAlign="left">
-                  Grocery
-                </Box>
-                <Spacer />
-                <AccordionIcon />
-              </AccordionButton>
-
-              <AccordionPanel
-                borderBottomRadius={10}
-                bg={"#f3f3f3"}
-                maxW={"350px"}
-                pb={4}
-              >
-                <Text textAlign="left">
-                  <chakra.span fontWeight={"bold"}>
-                    Monday - Friday:{" "}
-                  </chakra.span>
-                  11:00 AM - 9:00 PM
-                </Text>
-                <br />
-                <Text textAlign="left">
-                  <chakra.span fontWeight={"bold"}>
-                    Saturday - Sunday:{" "}
-                  </chakra.span>
-                  10:00 AM - 9:00 PM
-                </Text>
-              </AccordionPanel>
-            </AccordionItem>
-            <Box h={"20px"} />
-            <AccordionItem
-              bg={"#e1e1e1"}
-              borderRadius={10}
-              py={"3px"}
-              className="contact-info-box"
-              margin={"0 auto"}
-            >
-              <AccordionButton>
-                <Box as="span" textAlign="left">
-                  Restaurant
-                </Box>
-                <Spacer />
-                <AccordionIcon />
-              </AccordionButton>
-
-              <AccordionPanel
-                borderBottomRadius={10}
-                bg={"#f3f3f3"}
-                maxW={"350px"}
-                pb={4}
-              >
-                <Heading
-                  textAlign={"center"}
-                  fontWeight={"bold"}
-                  fontSize={"lg"}
-                  pb={"10px"}
-                >
-                  Lunch
-                </Heading>
-                <Stack>
-                  <Text textAlign="left">
-                    <chakra.span fontWeight={"bold"}>
-                      Monday - Friday:{" "}
-                    </chakra.span>
-                    11:30 AM - 2:30 PM
-                  </Text>
-                  <Text textAlign="left">
-                    <chakra.span fontWeight={"bold"}>
-                      Satuday - Sunday:{" "}
-                    </chakra.span>
-                    11:30 AM - 3:30 PM
-                  </Text>
-                </Stack>
-                <Heading
-                  textAlign={"center"}
-                  fontWeight={"bold"}
-                  fontSize={"lg"}
-                  pb={"10px"}
-                  pt={"20px"}
-                >
-                  Dinner
-                </Heading>
-                <Stack>
-                  <Text textAlign="left">
-                    <chakra.span fontWeight={"bold"}>
-                      Monday - Thursday:{" "}
-                    </chakra.span>
-                    5:00 PM - 9:30 PM
-                  </Text>
-                  <Text textAlign="left">
-                    <chakra.span fontWeight={"bold"}>
-                      Friday - Satuday:{" "}
-                    </chakra.span>
-                    5:00 PM - 10:00 PM
-                  </Text>
-                  <Text textAlign="left">
-                    <chakra.span fontWeight={"bold"}>Sunday: </chakra.span>
-                    5:00 PM - 9:00 PM
-                  </Text>
-                </Stack>
-              </AccordionPanel>
-            </AccordionItem>
-          </Accordion>
-        </Stack>
-      </Flex>
-    </>
-  );
-};
-
-import Head from "next/head";
+  MdPhone,
+  MdEmail,
+  MdLocationOn,
+  MdFacebook,
+  MdOutlineEmail,
+} from "react-icons/md";
+import { BsGithub, BsDiscord, BsPerson, BsWhatsapp } from "react-icons/bs";
+import NextLink from "next/link";
+//D92D26
+//238d1a
 
 export default function Contact() {
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const { name, email, message } = values;
+
+  const handleChange = (e) =>
+    setValues({ ...values, [e.target.name]: e.target.value });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await fetch("http://localhost:3000/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    });
+  };
+
   return (
-    <>
-      <Head>
-        <title>India Spice House | Contact</title>
-        <meta
-          name="description"
-          content="India Spice house is a indian grocery and restaurant located in Eden Prairie"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/logo.png" />
-      </Head>
-      <Center transform={"translateY(220px)"} mb={"50px"}>
-        <Stack
-          spacing={6}
-          direction="row"
-          align="center"
-          className="icon-group"
-        >
-          <IconButton
-            as="a"
-            href="https://www.facebook.com/indiaspicehouseep"
-            aria-label="Facebook"
-            icon={<FaFacebookSquare size={"65px"} />}
-            color={"#ffa500"}
-            transition={"all 0.2s ease"}
-            _hover={{ color: "#d77c1c" }}
-            bg={"none"}
-          />
-          <IconButton
-            as="a"
-            href="https://wa.me/16122937478"
-            aria-label="Whatsapp"
-            icon={<FaWhatsapp size={"65px"} />}
-            color={"#ffa500"}
-            _hover={{ color: "#d77c1c" }}
-            bg={"none"}
-          />
-        </Stack>
-      </Center>
-      <Flex
-        direction={"row"}
-        justifyContent="center"
-        alignItems="center"
-        minHeight="100vh"
+    <Center className="contact-large-container" maxW="full" overflow="hidden">
+      <Box
+        bg="#238d1a"
+        color="white"
+        borderRadius="lg"
+        p={{ sm: 5, md: 5, lg: 16 }}
+        className="contact-container"
       >
-        {/* <ContactForm /> */}
-
-        {/* <script
-          src="https://static.elfsight.com/platform/platform.js"
-          data-use-service-core
-          defer
-        ></script>
-        <div class="elfsight-app-857618ef-fd65-49e3-b1d9-915a4fcd6275"></div> */}
-
-        <ContactInfo />
-      </Flex>
-    </>
+        <Box p={4} className="contact-content-container">
+          <Wrap
+            className="contact-content"
+            spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}
+          >
+            <WrapItem>
+              <Box>
+                <Heading textAlign={"center"}>Contact</Heading>
+                <Text mt={{ sm: 3, md: 3, lg: 5 }} textAlign={"center"}>
+                  Fill up the form below to contact
+                </Text>
+                <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
+                  <VStack pl={0} spacing={3} alignItems="flex-start">
+                    <NextLink href="tel:9529428010" passHref>
+                      <Button
+                        as="a"
+                        size="md"
+                        height="48px"
+                        width="200px"
+                        variant="ghost"
+                        color="#FFFFFF"
+                        _hover={{ border: "2px solid #D92D26" }}
+                        leftIcon={<MdPhone color="#D92D26" size="20px" />}
+                        textAlign={"center"}
+                      >
+                        (952) 942-8010
+                      </Button>
+                    </NextLink>
+                    <NextLink
+                      href="mailto:indiaspicehouseep@gmail.com"
+                      passHref
+                    >
+                      <Button
+                        as="a"
+                        size="md"
+                        height="48px"
+                        width="300px"
+                        variant="ghost"
+                        color="#FFFFFF"
+                        _hover={{ border: "2px solid #D92D26" }}
+                        leftIcon={<MdEmail color="#D92D26" size="20px" />}
+                        textAlign={"center"}
+                      >
+                        indiaspicehouseep@gmail.com
+                      </Button>
+                    </NextLink>
+                  </VStack>
+                </Box>
+                <HStack
+                  mt={{ lg: 10, md: 10 }}
+                  spacing={10}
+                  px={5}
+                  alignItems="center"
+                >
+                  <IconButton
+                    as="a"
+                    aria-label="facebook"
+                    variant="ghost"
+                    size="lg"
+                    isRound={true}
+                    _hover={{ bg: "#D92D26" }}
+                    icon={<MdFacebook size="28px" />}
+                    href="https://www.facebook.com/indiaspicehouseep"
+                  />
+                  <IconButton
+                    as="a"
+                    aria-label="whatsapp"
+                    variant="ghost"
+                    size="lg"
+                    isRound={true}
+                    _hover={{ bg: "#D92D26" }}
+                    icon={<BsWhatsapp size="28px" />}
+                    href="https://wa.me/16122937478"
+                  />
+                </HStack>
+              </Box>
+            </WrapItem>
+            <WrapItem>
+              <Box bg="white" borderRadius="lg">
+                <Box m={8} color="#0B0E3F">
+                  <VStack spacing={5}>
+                    <form onSubmit={handleSubmit}>
+                      <div className="container">
+                        {/* <h3 style={{ textAlign: "center" }}>Contact Form</h3> */}
+                        <div className="input_container">
+                          <input
+                            type="text"
+                            name="name"
+                            value={name}
+                            onChange={handleChange}
+                            placeholder="Enter your name..."
+                            className="input"
+                            required
+                          />
+                        </div>
+                        <div className="input_container">
+                          <input
+                            type="email"
+                            name="email"
+                            value={email}
+                            onChange={handleChange}
+                            placeholder="Enter your email..."
+                            className="input"
+                            required
+                          />
+                        </div>
+                        <div className="input_container">
+                          <textarea
+                            name="message"
+                            value={message}
+                            onChange={handleChange}
+                            placeholder="Enter your message..."
+                            className="input"
+                            required
+                          />
+                        </div>
+                        <div className="btn_container">
+                          <button className="contact-btn">Send</button>
+                        </div>
+                      </div>
+                    </form>
+                  </VStack>
+                </Box>
+              </Box>
+            </WrapItem>
+          </Wrap>
+        </Box>
+      </Box>
+    </Center>
   );
 }

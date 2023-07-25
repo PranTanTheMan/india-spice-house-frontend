@@ -26,7 +26,7 @@ export default function Navbar() {
       href: "https://order.toasttab.com/online/india-spice-house-8445-joiner-way",
       target: "_blank",
     },
-    { name: "catering", href: "#", target: "_self" },
+    { name: "catering", href: "/catering", target: "_self" },
     { name: "specials", href: "/#specials", target: "_self" },
     { name: "about", href: "/about", target: "_self" },
     { name: "contact", href: "/contact", target: "_self" },

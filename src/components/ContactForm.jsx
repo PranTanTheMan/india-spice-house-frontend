@@ -1,8 +1,8 @@
 import React from "react";
 
+import { useState } from "react";
+
 import {
-  Container,
-  Flex,
   Box,
   Heading,
   Text,
@@ -15,7 +15,6 @@ import {
   FormControl,
   FormLabel,
   Input,
-  Link,
   InputGroup,
   InputLeftElement,
   Textarea,
@@ -28,11 +27,33 @@ import {
   MdFacebook,
   MdOutlineEmail,
 } from "react-icons/md";
-import { BsGithub, BsDiscord, BsPerson, BsWhatsapp } from "react-icons/bs";
+import { BsPerson, BsWhatsapp } from "react-icons/bs";
 import NextLink from "next/link";
 //D92D26
 //238d1a
+
 export default function ContactForm() {
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const { name, email, message } = values;
+
+  const handleChange = (e) =>
+    setValues({ ...values, [e.target.name]: e.target.value });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await fetch("http://localhost:3000/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    });
+  };
+
   return (
     <Center className="contact-large-container" maxW="full" overflow="hidden">
       <Box
@@ -128,20 +149,38 @@ export default function ContactForm() {
                           pointerEvents="none"
                           children={<BsPerson color="gray.800" />}
                         />
-                        <Input type="text" size="md" />
+                        <Input
+                          type="text"
+                          size="md"
+                          name="name"
+                          className="input_container"
+                          value={name}
+                          onChange={handleChange}
+                          placeholder="Your Name"
+                          required
+                        />
                       </InputGroup>
                     </FormControl>
-                    <FormControl id="name">
+                    <FormControl id="email">
                       <FormLabel>Mail</FormLabel>
                       <InputGroup borderColor="#E0E1E7">
                         <InputLeftElement
                           pointerEvents="none"
                           children={<MdOutlineEmail color="gray.800" />}
                         />
-                        <Input type="text" size="md" />
+                        <Input
+                          type="email"
+                          size="md"
+                          name="email"
+                          className="input_container"
+                          value={email}
+                          onChange={handleChange}
+                          placeholder="example@gmail.com"
+                          required
+                        />
                       </InputGroup>
                     </FormControl>
-                    <FormControl id="name">
+                    <FormControl id="message">
                       <FormLabel>Message</FormLabel>
                       <Textarea
                         borderColor="gray.300"
@@ -149,14 +188,21 @@ export default function ContactForm() {
                           borderRadius: "gray.300",
                         }}
                         placeholder="Type Here!"
+                        name="message"
+                        value={message}
+                        onChange={handleChange}
+                        required
                       />
                     </FormControl>
                     <FormControl id="name" float="right">
                       <Button
+                        className="btn_container"
                         variant="solid"
                         bg="#D92D26"
                         color="white"
                         _hover={{}}
+                        type="submit"
+                        as="a"
                       >
                         Send Message
                       </Button>

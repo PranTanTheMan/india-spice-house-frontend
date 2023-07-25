@@ -181,3 +181,36 @@ body {
 .contact-info-email {
   flex-direction: row;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 1px 2px 3px #ddd;
+}
+
+.input_container {
+  margin-bottom: 20px;
+}
+.input {
+  width: 100%;
+  padding: 5px;
+  outline: none;
+}
+.btn_container {
+  text-align: center;
+}
+.contact-btn {
+  background-color: #333 !important;
+  color: white;
+  padding: 15px 10px !important;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+}

@@ -13,7 +13,7 @@ export const navItems = [
     name: "Menu",
     href: "https://order.toasttab.com/online/india-spice-house-8445-joiner-way",
   },
-  { name: "Catering", href: "#", target: "_self" },
+  { name: "Catering", href: "/catering", target: "_self" },
   { name: "Specials", href: "/#specials" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },

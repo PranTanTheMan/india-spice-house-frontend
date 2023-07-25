@@ -202,6 +202,7 @@ body {
   width: 100%;
   padding: 5px;
   outline: none;
+  /* border: #333; */
 }
 .btn_container {
   text-align: center;

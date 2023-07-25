@@ -40,6 +40,10 @@ export default function ContactForm() {
   });
   const { name, email, message } = values;
 
+  const onClear = () => {
+    setValues("");
+  };
+
   const handleChange = (e) =>
     setValues({ ...values, [e.target.name]: e.target.value });
 
@@ -203,6 +207,7 @@ export default function ContactForm() {
                         _hover={{}}
                         type="submit"
                         as="a"
+                        onClick={onClear}
                       >
                         Send Message
                       </Button>

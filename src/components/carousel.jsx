@@ -50,6 +50,10 @@ export default function Carousel() {
       image:
         "https://cdn.discordapp.com/attachments/928498867153014847/1133262726525886464/70.jpg",
     },
+    {
+      image:
+        "https://cdn.discordapp.com/attachments/928498867153014847/1133571037095796797/71.jpg",
+    },
   ];
 
   return (

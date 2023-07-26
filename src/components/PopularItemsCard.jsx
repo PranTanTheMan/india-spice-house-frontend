@@ -15,14 +15,14 @@ export default function PopularItemsCard() {
       name: "Butter Chicken",
       description:
         "Deliciously tender chicken, delicately cooked in a rich and velvety buttery cream sauce.",
-      image: "/Gallery/5.jpg",
+      image: "/Gallery/56.jpg",
     },
     {
       id: 3,
       name: "Hyderbad Dum Biryani",
       description:
         "Herb-spiced meat/vegetables with saffron basmati dum rice, Hyderabadi style.",
-      image: "/Gallery/3.jpg",
+      image: "/Gallery/53.jpg",
     },
   ];
 

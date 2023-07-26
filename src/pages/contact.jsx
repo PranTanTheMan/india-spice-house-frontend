@@ -52,7 +52,7 @@ import {
   MdOutlineEmail,
 } from "react-icons/md";
 
-export default function vcontact2() {
+export default function Contact() {
   const [values, setValues] = useState({
     name: "",
     email: "",

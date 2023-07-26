@@ -18,7 +18,7 @@ export default function Special() {
         scrollMarginTop={"140px"}
         id="specials"
         mb={"2rem"}
-        mt={"7rem"}
+        mt={{ base: "-7rem", lg: "-2.5rem" }}
         flexDirection={"column"}
       >
         <Heading>Specials</Heading>

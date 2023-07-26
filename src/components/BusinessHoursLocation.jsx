@@ -18,8 +18,16 @@ import {
 export default function BusinessHoursLocation() {
   return (
     <>
-      <Center mb={"10rem"} mt={"7rem"} flexDirection={"column"}>
-        <Center mb={"5rem"} mt={"7rem"} flexDirection={"column"}>
+      <Center
+        mb={"10rem"}
+        mt={{ base: "0", lg: "6rem" }}
+        flexDirection={"column"}
+      >
+        <Center
+          mb={"5rem"}
+          mt={{ base: "0", lg: "6rem" }}
+          flexDirection={"column"}
+        >
           <Heading textAlign={"center"}>Business Hours & Location</Heading>
           <Box w="70px" h="2px" bg="black" mt={"10px"} />
         </Center>

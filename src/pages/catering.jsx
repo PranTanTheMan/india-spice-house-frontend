@@ -37,7 +37,7 @@ export default function Catering() {
         </Heading>
         <iframe
           src="https://docs.google.com/forms/d/e/1FAIpQLSfjFTakC69x3BOOPyOFEr2QeDlHnTVMDlSPfyt5AdpaQJYr3A/viewform"
-          width="700"
+          width="100%"
           height="1520"
           marginheight="0"
           marginwidth="0"

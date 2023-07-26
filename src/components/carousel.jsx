@@ -128,7 +128,7 @@ export default function Carousel() {
                 alignItems={"center"}
                 gap={4}
                 flexDirection={"column"}
-                pt={"330px"}
+                pt={{ base: "190px", md: "310px" }}
               >
                 <Heading
                   color={"white"}

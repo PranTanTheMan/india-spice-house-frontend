@@ -213,21 +213,6 @@ body {
 .btn_container {
   text-align: center;
 }
-.contact-btn {
-  background-color: #333 !important;
-  color: white;
-  padding: 10px 30px !important;
-  border-radius: 5px;
-  outline: none;
-  font-size: 16px;
-  transition: all 0.4s ease;
-}
-
-.contact-btn:hover {
-  color: #333 !important;
-  background-color: white !important;
-  outline: 1px solid #333 !important;
-}
 
 .contact-mail-phone:hover {
   color: #333;

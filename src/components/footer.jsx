@@ -1,20 +1,18 @@
 import {
   Box,
   ButtonGroup,
-  Container,
   IconButton,
   Link,
   Stack,
   Text,
   Image,
-  Spacer,
+  chakra,
 } from "@chakra-ui/react";
-import { FaFacebookSquare, FaYelp, FaWhatsapp } from "react-icons/fa";
+import { FaFacebookSquare, FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   return (
     <Box bg="#D92D26">
-      {/* <Container as="footer" role="contentinfo" py={{ base: "12", md: "16" }}> */}
       <Box py={{ base: "11", md: "3rem" }} px={{ base: "10", md: "24" }}>
         <Stack spacing={{ base: "4", md: "5" }}>
           <Stack justify="space-between" direction="row" align="center">
@@ -24,7 +22,6 @@ export default function Footer() {
                 alt="logo"
                 boxSize="60px"
                 transition={"all 0.35s ease "}
-                _hover={{ transform: "rotate(25deg)" }}
               />
             </Link>
             <ButtonGroup variant={"tertiary.accent"}>
@@ -55,11 +52,27 @@ export default function Footer() {
             justifyContent={"space-between"}
             alignItems={"center"}
           >
-            <Text fontSize="sm" color="white">
-              &copy; {new Date().getFullYear()} India Spice House. All rights
-              reserved. Designed by PRSM.
+            <Text
+              display={{ base: "block", lg: "none" }}
+              textAlign={"center"}
+              fontSize="sm"
+              color="white"
+            >
+              Designed by PRSM.
             </Text>
-            <Stack direction={"column"} spacing={6}>
+            <Text
+              mt={{ base: "15px", md: "0" }}
+              textAlign={"center"}
+              fontSize="sm"
+              color="white"
+            >
+              &copy; {new Date().getFullYear()} India Spice House. All rights
+              reserved.{" "}
+              <chakra.span display={{ base: "none", lg: "block" }}>
+                Designed by PRSM.
+              </chakra.span>
+            </Text>
+            <Stack direction={"column"} spacing={3}>
               <Link href="tel:9529427510" fontSize="sm" color="white">
                 Grocery: (952) 942-7510
               </Link>
@@ -69,7 +82,6 @@ export default function Footer() {
             </Stack>
           </Stack>
         </Stack>
-        {/* </Container> */}
       </Box>
     </Box>
   );

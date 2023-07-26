@@ -1,32 +1,49 @@
 import React from "react";
-
-//test
-
 import { useState } from "react";
 
-import { createRoot } from "react-dom/client";
-
 import {
-  Container,
-  Flex,
+  Avatar,
   Box,
-  Heading,
-  Text,
-  IconButton,
   Button,
-  VStack,
-  HStack,
-  Wrap,
-  WrapItem,
+  Checkbox,
+  Flex,
   FormControl,
+  FormHelperText,
   FormLabel,
+  GridItem,
+  Heading,
+  Icon,
   Input,
-  Link,
   InputGroup,
-  InputLeftElement,
+  InputLeftAddon,
+  Radio,
+  RadioGroup,
+  Select,
+  SimpleGrid,
+  Stack,
+  Text,
   Textarea,
+  VisuallyHidden,
+  chakra,
+  Divider,
+  VStack,
+  Link,
+  HStack,
+  IconButton,
+  useToast,
+  Spinner,
   Center,
 } from "@chakra-ui/react";
+import { FaUser } from "react-icons/fa";
+import NextLink from "next/link";
+import {
+  BsGithub,
+  BsDiscord,
+  BsPerson,
+  BsWhatsapp,
+  BsFillExclamationDiamondFill,
+} from "react-icons/bs";
+
 import {
   MdPhone,
   MdEmail,
@@ -34,17 +51,15 @@ import {
   MdFacebook,
   MdOutlineEmail,
 } from "react-icons/md";
-import { BsGithub, BsDiscord, BsPerson, BsWhatsapp } from "react-icons/bs";
-import NextLink from "next/link";
-//D92D26
-//238d1a
 
-export default function Contact() {
+export default function vcontact2() {
   const [values, setValues] = useState({
     name: "",
     email: "",
     message: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const toast = useToast();
 
   const { name, email, message } = values;
 
@@ -53,7 +68,8 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch("https://india-spice-house-frontend.vercel.app//api/contact", {
+    setIsLoading(true);
+    await fetch("http://localhost:3000/api/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -61,153 +77,177 @@ export default function Contact() {
       body: JSON.stringify(values),
     });
     setValues({ name: "", email: "", message: "" });
+    setIsLoading(false);
+
+    toast({
+      title: "Message Sent",
+      description: "We will get back to you as soon as possible.",
+      status: "success",
+      duration: 5000,
+      isClosable: true,
+    });
   };
 
   return (
-    <Center className="contact-large-container" maxW="full" overflow="hidden">
-      <Box
-        bg="#238d1a"
-        color="white"
-        borderRadius="lg"
-        p={{ sm: 5, md: 5, lg: 16 }}
-        className="contact-container"
-      >
-        <Box p={4} className="contact-content-container">
-          <Wrap
-            className="contact-content"
-            spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}
-          >
-            <WrapItem>
-              <Box>
-                <Heading textAlign={"center"}>Contact</Heading>
-                <Text mt={{ sm: 3, md: 3, lg: 5 }} textAlign={"center"}>
-                  Fill the form to contact
-                </Text>
-                <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
-                  <VStack pl={0} spacing={3} alignItems="flex-start">
-                    <NextLink href="tel:9529428010" passHref>
-                      <Button
-                        className="contact-mail-phone"
-                        as="a"
-                        size="md"
-                        height="48px"
-                        width="163px"
-                        variant="ghost"
-                        color="#FFFFFF"
-                        _hover={{}}
-                        leftIcon={<MdPhone color="#D92D26" size="20px" />}
-                        textAlign={"center"}
-                      >
-                        (952) 942-8010
-                      </Button>
-                    </NextLink>
-                    <NextLink
-                      href="mailto:indiaspicehouseep@gmail.com"
-                      passHref
-                    >
-                      <Button
-                        className="contact-mail-phone"
-                        as="a"
-                        size="md"
-                        height="48px"
-                        width="300px"
-                        variant="ghost"
-                        color="#FFFFFF"
-                        _hover={{ color: "333" }}
-                        leftIcon={<MdEmail color="#D92D26" size="20px" />}
-                        textAlign={"center"}
-                      >
-                        indiaspicehouseep@gmail.com
-                      </Button>
-                    </NextLink>
-                  </VStack>
-                </Box>
-                <HStack
-                  className="contact-icons"
-                  mt={{ lg: 10, md: 10, sm: 0 }}
-                  spacing={5}
-                  // px={{ base: 2, lg: 10 }}
-                  mb={{ base: -10 }}
-                  pl={"90px"}
-                  alignItems="center"
-                >
-                  <IconButton
-                    className="contact-icon"
-                    as="a"
-                    aria-label="facebook"
-                    variant="ghost"
-                    size="lg"
-                    isRound={true}
-                    _hover={{ color: "#D92D26" }}
-                    icon={<MdFacebook size="28px" />}
-                    href="https://www.facebook.com/indiaspicehouseep"
-                  />
+    <Box p={10} minH={"80vh"} pt={"180px !important"}>
+      <Box mt={["100px", 0]}>
+        <SimpleGrid
+          display={{ base: "initial", md: "grid" }}
+          columns={{ md: 1 }}
+          spacing={{ md: 6 }}
+        >
+          <GridItem colSpan={{ md: 1 }}>
+            <Box px={[4, 0]}>
+              <Heading
+                fontSize="4xl"
+                fontWeight="medium"
+                lineHeight="10"
+                textAlign={"center"}
+              >
+                Contact
+              </Heading>
+              <Text mt={1} fontSize="sm" color="gray.600" textAlign={"center"}>
+                Fill out the form to contact
+              </Text>
+              <Box textAlign={"center"}>
+                <IconButton
+                  className="contact-icon"
+                  as="a"
+                  aria-label="facebook"
+                  variant="ghost"
+                  position={"relative"}
+                  size="lg"
+                  isRound={true}
+                  _hover={{ color: "#D92D26" }}
+                  icon={<MdFacebook size="28px" />}
+                  href="https://www.facebook.com/indiaspicehouseep"
+                />
 
-                  <IconButton
-                    className="contact-icon"
-                    as="a"
-                    aria-label="whatsapp"
-                    variant="ghost"
-                    size="lg"
-                    isRound={true}
-                    _hover={{ color: "#D92D26" }}
-                    icon={<BsWhatsapp size="28px" />}
-                    href="https://wa.me/16122937478"
-                  />
-                </HStack>
+                <IconButton
+                  className="contact-icon"
+                  as="a"
+                  aria-label="whatsapp"
+                  variant="ghost"
+                  size="lg"
+                  isRound={true}
+                  _hover={{ color: "#D92D26" }}
+                  icon={<BsWhatsapp size="28px" />}
+                  href="https://wa.me/16122937478"
+                />
+                <IconButton
+                  className="contact-icon"
+                  as="a"
+                  aria-label="whatsapp"
+                  variant="ghost"
+                  size="lg"
+                  isRound={true}
+                  _hover={{ color: "#D92D26" }}
+                  icon={<MdPhone size="28px" />}
+                  href="https://wa.me/16122937478"
+                />
+                <IconButton
+                  className="contact-icon"
+                  as="a"
+                  aria-label="whatsapp"
+                  variant="ghost"
+                  size="lg"
+                  isRound={true}
+                  _hover={{ color: "#D92D26" }}
+                  icon={<MdEmail size="28px" />}
+                  href="https://wa.me/16122937478"
+                />
               </Box>
-            </WrapItem>
-            <WrapItem>
-              <Box className={"form-box"} bg="white" borderRadius="lg">
-                <Box m={8} color="#0B0E3F">
-                  {/* <VStack spacing={5}> */}
-                  <form onSubmit={handleSubmit}>
-                    <div className="container">
-                      {/* <h3 style={{ textAlign: "center" }}>Contact Form</h3> */}
-                      <div className="input_container">
-                        <input
-                          type="text"
-                          name="name"
-                          value={name}
-                          onChange={handleChange}
-                          placeholder="Enter your name..."
-                          className="input"
-                          required
-                        />
-                      </div>
-                      <div className="input_container">
-                        <input
-                          type="email"
-                          name="email"
-                          value={email}
-                          onChange={handleChange}
-                          placeholder="Enter your email..."
-                          className="input"
-                          required
-                        />
-                      </div>
-                      <div className="input_container">
-                        <textarea
-                          name="message"
-                          value={message}
-                          onChange={handleChange}
-                          placeholder="Enter your message..."
-                          className="input"
-                          required
-                        />
-                      </div>
-                      <div className="btn_container">
-                        <button className="contact-btn">Send</button>
-                      </div>
+            </Box>
+          </GridItem>
+          <GridItem mt={[5, null, 0]} colSpan={{ md: 2 }}>
+            <Stack px={4} py={5} p={[null, 6]} bg="white" spacing={6}>
+              <form onSubmit={handleSubmit}>
+                <SimpleGrid columns={6} spacing={6} maxW={"400px"} mx={"auto"}>
+                  <FormControl as={GridItem} colSpan={[6, 3]}>
+                    <FormLabel
+                      htmlFor="first_name"
+                      fontSize="sm"
+                      fontWeight="md"
+                      color="gray.700"
+                      _dark={{ color: "gray.50" }}
+                    >
+                      Name
+                    </FormLabel>
+                    <div className="input_container">
+                      <input
+                        type="text"
+                        name="name"
+                        value={name}
+                        onChange={handleChange}
+                        placeholder="Enter your name..."
+                        className="input"
+                        required
+                      />
                     </div>
-                  </form>
-                  {/* </VStack> */}
-                </Box>
-              </Box>
-            </WrapItem>
-          </Wrap>
-        </Box>
+                  </FormControl>
+
+                  <FormControl as={GridItem} colSpan={[6, 3]}>
+                    <FormLabel
+                      htmlFor="email_address"
+                      fontSize="sm"
+                      fontWeight="md"
+                      color="gray.700"
+                      _dark={{ color: "gray.50" }}
+                    >
+                      Email address
+                    </FormLabel>
+                    <div className="input_container">
+                      <input
+                        type="email"
+                        name="email"
+                        value={email}
+                        onChange={handleChange}
+                        placeholder="Enter your email..."
+                        className="input"
+                        required
+                      />
+                    </div>
+                  </FormControl>
+
+                  <FormControl as={GridItem} colSpan={6}>
+                    <FormLabel
+                      htmlFor="street_address"
+                      fontSize="sm"
+                      fontWeight="md"
+                      color="gray.700"
+                    >
+                      Message
+                    </FormLabel>
+                    <div className="input_container">
+                      <textarea
+                        name="message"
+                        value={message}
+                        onChange={handleChange}
+                        placeholder="Enter your message..."
+                        className="input"
+                        required
+                      />
+                    </div>
+                  </FormControl>
+                  <Box textAlign={"center"} as={GridItem} colSpan={6}>
+                    <Button
+                      w={"100px"}
+                      type="submit"
+                      isLoading={isLoading}
+                      border={"1px"}
+                      bg={"#FFFFFF"}
+                      _hover={{ bg: "#D92D26" }}
+                      borderColor={"#D92D26"}
+                    >
+                      {isLoading ? <Spinner /> : "Send"}
+                    </Button>
+                  </Box>
+                </SimpleGrid>
+              </form>
+            </Stack>
+          </GridItem>
+        </SimpleGrid>
       </Box>
-    </Center>
+    </Box>
   );
 }

@@ -8,149 +8,123 @@ import {
   Stack,
   Text,
   chakra,
+  Center,
+  Flex,
 } from "@chakra-ui/react";
 import { HiChevronRight } from "react-icons/hi";
+
+import { motion } from "framer-motion";
+
+import Slideshow from "./slideshow";
 import React from "react";
 
 export default function AboutHero() {
+  const MotionHeading = motion(Heading);
+  const MotionText = motion(Text);
+  const MotionButton = motion(Button);
   return (
-    <Box
-      position="relative"
-      height={{
-        lg: "90vh",
-      }}
-      pt={{ base: "80px", lg: "0" }}
-    >
-      <Stack
-        direction={{
-          base: "column",
-          lg: "row",
-        }}
-        spacing={{
-          base: "16",
-        }}
-        align={{
-          lg: "center",
-        }}
-        height="full"
+    <Box bg="gray.800" minH={"100vh"} position="relative">
+      <Center
+        textAlign={"center !important"}
+        pb="32"
+        pt={{ base: "100px", lg: "170px" }}
+        position="relative"
+        zIndex={1}
       >
-        <Stack
-          spacing={{
-            base: "8",
-            md: "12",
-          }}
-          ml={{ base: 0, lg: "150px" }}
-          className="aboutHero"
-        >
-          <Stack spacing="4">
-            <Stack
-              spacing={{
-                base: "4",
-                md: "6",
-              }}
-              maxW={{
-                md: "xl",
-                lg: "md",
-                xl: "xl",
-              }}
-              mt={"50px"}
+        <Flex color="white">
+          <Box className="hero-content" mt={{ base: "100px", lg: "150px" }}>
+            <MotionHeading
+              as="h1"
+              size={{ base: "xl", md: "3xl" }}
+              className="hero-title"
+              fontWeight="extrabold"
+              maxWidth={{ base: "100%", md: "80%" }}
+              mx="auto"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 1 }}
             >
-              <Heading
-                size={{
-                  base: "2xl",
-                  md: "4xl",
-                }}
-                textAlign={{ base: "center", md: "left" }}
+              Learn what makes India Spice House.{" "}
+              <chakra.span
+                bgGradient="linear-gradient(70deg, #D92D26, #ffa500)"
+                bgClip="text"
+                fontWeight="bold"
               >
-                Learn what makes the best.
-                <chakra.span
-                  bgGradient="linear-gradient(70deg, #D92D26, #ffa500)"
-                  bgClip="text"
-                  fontWeight="bold"
-                >
-                  The Best.
-                </chakra.span>
-              </Heading>
-              <Text
-                fontSize={{
+                The Best.
+              </chakra.span>
+            </MotionHeading>
+            <MotionText
+              className="hero-subtitle"
+              maxW={"500px"}
+              fontSize={{ md: "2xl" }}
+              mt="4"
+              mx="auto"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 1 }}
+            >
+              From Catering events, a variety of specials and a wide range of
+              grocery items, we have it all.
+            </MotionText>
+            <Stack
+              direction={{ base: "column", md: "row" }}
+              mt="10"
+              spacing="4"
+              justifyContent={"center"}
+            >
+              <MotionButton
+                as="a"
+                href="https://order.toasttab.com/online/india-spice-house-8445-joiner-way"
+                target="_blank"
+                colorScheme="red"
+                px="8"
+                rounded="full"
+                size="lg"
+                fontSize="md"
+                fontWeight="bold"
+                className="hero-btn"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 1 }}
+              >
+                <span style={{ paddingRight: "10px" }}>Eat with us today</span>
+                <HiChevronRight />
+              </MotionButton>
+              <MotionButton
+                color={"white"}
+                variant="ghost"
+                _hover={{ bg: "whiteAlpha.300" }}
+                size={{
                   base: "lg",
                   md: "xl",
                 }}
-                w={{ base: "70%", md: "75%" }}
-                textAlign={{ base: "center", md: "left" }}
-                mx={{ base: "auto", md: "0" }}
+                px={"10px"}
+                as={"a"}
+                cursor={"pointer"}
+                href={"#learn"}
+                className="hero-btn"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 1 }}
               >
-                From Catering events, a variety of specials and a wide range of
-                grocery items, we have it all.
-              </Text>
+                Learn more
+              </MotionButton>
             </Stack>
-          </Stack>
-          <Stack
-            direction={{
-              base: "column",
-              md: "row",
-            }}
-            spacing="3"
-            maxW={{ base: "250px", md: "xl" }}
-            mx={{ base: "auto", md: "0" }}
-          >
-            <Button
-              as="a"
-              href="https://order.toasttab.com/online/india-spice-house-8445-joiner-way"
-              colorScheme="red"
-              px="8"
-              rounded="full"
-              size="lg"
-              fontSize="md"
-              fontWeight="bold"
-            >
-              <span style={{ paddingRight: "10px" }}>Eat with us today</span>
-              <HiChevronRight />
-            </Button>
-            <Button
-              variant="ghost"
-              size={{
-                base: "lg",
-                md: "xl",
-              }}
-              px={"10px"}
-              as={"a"}
-              cursor={"pointer"}
-              href={"#learn"}
-            >
-              Learn more
-            </Button>
-          </Stack>
-        </Stack>
-        <Box
-          pos={{
-            lg: "absolute",
-          }}
-          right="0"
-          bottom="-20"
-          w={{
-            base: "full",
-            lg: "50%",
-          }}
-          height={{
-            base: "96",
-            lg: "full",
-          }}
-          sx={{
-            clipPath: {
-              lg: "polygon(7% 0%, 100% 0%, 100% 100%, 0% 100%)",
-            },
-          }}
-        >
-          <Img
-            boxSize="full"
-            objectFit="cover"
-            src="/Gallery/1.jpg"
-            alt="werk"
-          />
-          {/* Add slideshow that includes catering, event stuff, grocery, tandoor specials, etc */}
-        </Box>
-      </Stack>
+          </Box>
+        </Flex>
+      </Center>
+      <Flex
+        id="image-wrapper"
+        position="absolute"
+        insetX="0"
+        insetY="0"
+        w="full"
+        h="full"
+        overflow="hidden"
+        align="center"
+      >
+        <Slideshow />
+      </Flex>
     </Box>
   );
 }

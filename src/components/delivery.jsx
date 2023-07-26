@@ -37,7 +37,7 @@ export default function Delivery() {
   });
   return (
     <>
-      <Center mb={"2rem"} mt={"12rem"} flexDirection={"column"}>
+      <Center mb={"2rem"} mt={"7rem"} flexDirection={"column"}>
         <Heading>Order Delivery</Heading>
         <Box w="70px" h="2px" bg="black" mt={"10px"} />
         <Text mt={"10px"}>
@@ -73,7 +73,7 @@ export default function Delivery() {
             md: 3,
           }}
           mb={"75px"}
-          mx={{ base: "0", lg: "150px" }}
+          mx={{ base: "15px", lg: "150px" }}
         >
           {data.map((item) => (
             <Center

@@ -33,7 +33,7 @@ const Slideshow = () => {
   }, [images]);
 
   return (
-    <Box position="relative" w={"100%"} h={"100%"}>
+    <Box position="relative" width="full" height="100%">
       {images.map((image, index) => (
         <Image
           key={index}
@@ -48,7 +48,7 @@ const Slideshow = () => {
           height="100%"
         />
       ))}
-      <Box position="absolute" w="full" h="full" bg="blackAlpha.700" />
+      <Box position="relative" w="full" h="full" bg="blackAlpha.700" />
     </Box>
   );
 };

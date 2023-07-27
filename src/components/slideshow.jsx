@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-import { Box, Image } from "@chakra-ui/react";
+import { Box, Image, AspectRatio } from "@chakra-ui/react";
 
 const Slideshow = () => {
   // array of image URLs going up to
@@ -8,8 +8,11 @@ const Slideshow = () => {
       "/Gallery/1.jpg",
       "/Gallery/2.jpg",
       "/Gallery/3.jpg",
-      "/Gallery/4.jpg",
-      "/Gallery/5.jpg",
+      "/Gallery/6.jpg",
+      "/Gallery/7.jpg",
+      "/Gallery/8.jpg",
+      "/Gallery/9.jpg",
+      "/Gallery/10.jpg",
     ],
     []
   );
@@ -30,7 +33,7 @@ const Slideshow = () => {
   }, [images]);
 
   return (
-    <Box position="relative" width="full" height="full">
+    <Box position="relative" w={"100%"} h={"100%"}>
       {images.map((image, index) => (
         <Image
           key={index}
@@ -40,6 +43,7 @@ const Slideshow = () => {
           opacity={index === currentImageIndex ? 1 : 0}
           transition="opacity 0.5s ease-in-out"
           objectFit="cover"
+          objectPosition="center"
           width="100%"
           height="100%"
         />

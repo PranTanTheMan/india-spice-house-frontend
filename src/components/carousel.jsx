@@ -128,11 +128,11 @@ export default function Carousel() {
                 alignItems={"center"}
                 gap={4}
                 flexDirection={"column"}
-                pt={{ base: "190px", md: "310px" }}
+                pt={{ base: "230px", md: "310px" }}
               >
                 <Heading
                   color={"white"}
-                  fontSize={{ base: "3xl", md: "4xl", lg: "7xl" }}
+                  fontSize={{ base: "xl", md: "4xl", lg: "7xl" }}
                 >
                   Catering & Private Events
                 </Heading>

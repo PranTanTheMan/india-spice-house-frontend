@@ -39,8 +39,6 @@ export default function Catering() {
           src="https://docs.google.com/forms/d/e/1FAIpQLSfjFTakC69x3BOOPyOFEr2QeDlHnTVMDlSPfyt5AdpaQJYr3A/viewform"
           width="100%"
           height="1520"
-          marginheight="0"
-          marginwidth="0"
           style={{ paddingTop: "30px", marginBottom: "100px" }}
         >
           Loading…

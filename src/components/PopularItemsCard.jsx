@@ -8,7 +8,7 @@ export default function PopularItemsCard() {
       name: "Garlic Naan",
       description:
         "A savory flatbread dough mixed with garlic, expertly baked in a traditional tandoor.",
-      image: "/Gallery/1.jpg",
+      image: "/Gallery/5.jpg",
     },
     {
       id: 2,

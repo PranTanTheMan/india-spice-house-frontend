@@ -13,9 +13,12 @@ export default function App({ Component, pageProps }) {
             src="//code.tidio.co/zbbipf0hzh3epsuhiuiklvcz2ylwowis.js"
             async
           ></script> */}
+          <script
+            src="//code.tidio.co/zbbipf0hzh3epsuhiuiklvcz2ylwowis.js"
+            async
+          ></script>
         </Layout>
       </ChakraProvider>
-
       {/* ✅ */}
     </>
   );

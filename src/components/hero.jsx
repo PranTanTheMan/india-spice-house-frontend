@@ -22,7 +22,7 @@ export default function Hero() {
   const MotionButton = motion(Button);
   return (
     <>
-      <Box bg="gray.800" minH={"100vh"} position="relative">
+      <Box bg="gray.800"  position="relative">
         <Center
           textAlign={"center !important"}
           py="32"

@@ -59,9 +59,10 @@ export default function Carousel() {
   return (
     <Box
       position={"relative"}
-      height={"100vh"}
+      height={"full"}
       width={"full"}
       overflow={"hidden"}
+      // marginBottom={"-500px"}
     >
       {/* CSS files for react-slick */}
       <link
@@ -109,7 +110,7 @@ export default function Carousel() {
         {cards.map((card, index) => (
           <Box
             key={index}
-            height={"6xl"}
+            height={"full"}
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
@@ -119,20 +120,21 @@ export default function Carousel() {
             {/* This is the block you need to change, to customize the caption */}
             <Container
               size="container.lg"
-              height="600px"
+              height="100%"
               position="relative"
               zIndex={"999"}
+              paddingBottom={"200px"}
             >
               <Box
                 justifyContent={"center"}
                 alignItems={"center"}
                 gap={4}
                 flexDirection={"column"}
-                pt={{ base: "190px", md: "310px" }}
+                pt={{ base: "230px", md: "310px" }}
               >
                 <Heading
                   color={"white"}
-                  fontSize={{ base: "3xl", md: "4xl", lg: "7xl" }}
+                  fontSize={{ base: "xl", md: "4xl", lg: "7xl" }}
                 >
                   Catering & Private Events
                 </Heading>

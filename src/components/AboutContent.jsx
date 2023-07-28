@@ -83,21 +83,19 @@ export default function AboutContent() {
         py={"40px"}
       >
         <Stack
-          flexDirection={"row"}
+          flexDirection={{ base: "column", md: "column" }}
           alignItems={"center"}
-          justifyContent={"center"}
-          pb={"15px"}
         >
-          <Heading>Who we are</Heading>
-          <Box w="70px" h="2px" bg="black" mt={"10px"} />
-        </Stack>
-        <Stack
-          flexDirection={{ base: "column", md: "row" }}
-          alignItems={"center"}
-          justifyContent={"center"}
-        >
+          <Stack
+            justifyContent={"flex-start"}
+            flexDirection={"row"}
+            alignItems={"center"}
+            pb={"15px"}
+          >
+            <Heading>Who we are</Heading>
+            <Box w="70px" h="2px" bg="black" mt={"10px"} />
+          </Stack>
           <Text
-            textAlign={{ base: "center", lg: "center" }}
             mx={{ base: "auto", lg: "0" }}
             w={{ base: "315px", lg: "900px" }}
             id="content-about"

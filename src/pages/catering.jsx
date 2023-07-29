@@ -12,6 +12,7 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import Carousel from "@/components/carousel";
+import Head from "next/head";
 
 export default function Catering() {
   const pdffile = "/catering.pdf";

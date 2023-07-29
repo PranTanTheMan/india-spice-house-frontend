@@ -1,38 +1,20 @@
 import React from "react";
 import { useState } from "react";
+import Head from "next/head";
 
 import {
-  Avatar,
   Box,
   Button,
-  Checkbox,
-  Flex,
   FormControl,
-  FormHelperText,
   FormLabel,
   GridItem,
   Heading,
-  Icon,
-  Input,
-  InputGroup,
-  InputLeftAddon,
-  Radio,
-  RadioGroup,
-  Select,
   SimpleGrid,
   Stack,
   Text,
-  Textarea,
-  VisuallyHidden,
-  chakra,
-  Divider,
-  VStack,
-  Link,
-  HStack,
   IconButton,
   useToast,
   Spinner,
-  Center,
 } from "@chakra-ui/react";
 import { FaUser } from "react-icons/fa";
 import NextLink from "next/link";

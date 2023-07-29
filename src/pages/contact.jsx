@@ -144,7 +144,7 @@ export default function Contact() {
                     isRound={true}
                     _hover={{ color: "#D92D26" }}
                     icon={<MdPhone size="28px" />}
-                    href="https://wa.me/16122937478"
+                    href="tel:9529428010"
                   />
                   <IconButton
                     className="contact-icon"
@@ -155,7 +155,8 @@ export default function Contact() {
                     isRound={true}
                     _hover={{ color: "#D92D26" }}
                     icon={<MdEmail size="28px" />}
-                    href="https://wa.me/16122937478"
+                    href="mailto:indiaspicehouseep@gmail.com
+                    "
                   />
                 </Box>
               </Box>

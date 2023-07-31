@@ -51,7 +51,7 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    await fetch("https://india-spice-house-frontend.vercel.app/api/contact", {
+    await fetch("https://indiaspicehouseep.com/api/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

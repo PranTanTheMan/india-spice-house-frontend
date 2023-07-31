@@ -29,9 +29,9 @@ import {
 import {
   MdPhone,
   MdEmail,
-  MdLocationOn,
+
   MdFacebook,
-  MdOutlineEmail,
+  
 } from "react-icons/md";
 
 export default function Contact() {
@@ -51,7 +51,7 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    await fetch("https://www.indiaspicehouseep.com/api/contact", {
+    await fetch("http://localhost:3000/api/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -65,7 +65,7 @@ export default function Contact() {
       title: "Message Sent",
       description: "We will get back to you as soon as possible.",
       status: "success",
-      duration: 5000,
+      duration: 3500,
       isClosable: true,
     });
   };

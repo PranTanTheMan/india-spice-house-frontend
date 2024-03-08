@@ -19,7 +19,7 @@ export default function PopularItemsCard() {
     },
     {
       id: 3,
-      name: "Hyderbad Dum Biryani",
+      name: "Hyderabad Dum Biryani",
       description:
         "Herb-spiced meat/vegetables with saffron basmati dum rice, Hyderabadi style.",
       image: "/Gallery/53.jpg",

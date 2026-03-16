@@ -22,7 +22,7 @@ export default function Delivery() {
     {
       id: 2,
       img: "/doordash.png",
-      href: "https://order.online/store/india-spice-house-eden-prairie-27642/?delivery=true&hideModal=true",
+      href: "https://www.doordash.com/store/india-spice-house-eden-prairie-27642/20011012/",
     },
     {
       id: 3,

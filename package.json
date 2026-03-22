@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^3.0.47",
+    "@ai-sdk/react": "^3.0.136",
     "@chakra-ui/icons": "^2.0.19",
     "@chakra-ui/react": "^2.7.1",
     "@emailjs/browser": "^3.11.0",
@@ -16,6 +18,7 @@
     "@emotion/styled": "^11.11.0",
     "@sanity/client": "^6.1.7",
     "@sendgrid/mail": "^7.7.0",
+    "ai": "^6.0.134",
     "dotenv": "^16.3.1",
     "emailjs-com": "^3.2.0",
     "eslint": "8.45.0",

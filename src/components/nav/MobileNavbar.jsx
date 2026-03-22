@@ -53,7 +53,7 @@ export const MobileDrawer = (props) => {
               <Button
                 as={"a"}
                 href={item.href}
-                key={item}
+                key={item.name}
                 size="lg"
                 variant="text"
                 colorScheme="gray"

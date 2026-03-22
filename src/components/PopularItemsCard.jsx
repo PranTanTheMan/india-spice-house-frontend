@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Box, Image, chakra, Link } from "@chakra-ui/react";
+import { Flex, Box, Image, chakra } from "@chakra-ui/react";
 
 export default function PopularItemsCard() {
   const products = [
@@ -38,7 +38,7 @@ export default function PopularItemsCard() {
         mb={"5rem"}
       >
         {products.map((product) => (
-          <Box key={product} maxW="xs" bg="white" shadow="2xl" rounded="lg">
+          <Box key={product.id} maxW="xs" bg="white" shadow="2xl" rounded="lg">
             <Box px={4} py={2}>
               <chakra.h1
                 color="gray.800"

@@ -16,7 +16,7 @@ import {
   IconButton,
   Input,
   Link,
-  Spinner,
+  SkeletonText,
   Stack,
   Text,
   useBreakpointValue,
@@ -169,8 +169,17 @@ function MessageBubble({ message }) {
   const textParts = (message.parts || []).filter(
     (part) => part.type === "text",
   );
+  const hasRenderableText = textParts.some((part) => part.text.trim().length > 0);
 
   if (textParts.length === 0) {
+    return null;
+  }
+
+  if (!isUser && !hasRenderableText) {
+    return <LoadingBubble />;
+  }
+
+  if (isUser && !hasRenderableText) {
     return null;
   }
 
@@ -191,16 +200,46 @@ function MessageBubble({ message }) {
           {isUser ? "You" : "India Spice House"}
         </Text>
         {textParts.map((part, index) => (
-          <Box key={`${message.id}-${index}`}>
-            {isUser
-              ? renderRichText(
-                  part.text,
-                  `${message.id}-${index}`,
-                  "whiteAlpha.900",
-                )
-              : renderRichText(part.text, `${message.id}-${index}`, "#D92D26")}
-          </Box>
+          part.text.trim().length > 0 ? (
+            <Box key={`${message.id}-${index}`}>
+              {isUser
+                ? renderRichText(
+                    part.text,
+                    `${message.id}-${index}`,
+                    "whiteAlpha.900",
+                  )
+                : renderRichText(part.text, `${message.id}-${index}`, "#D92D26")}
+            </Box>
+          ) : null
         ))}
+      </Box>
+    </Flex>
+  );
+}
+
+function LoadingBubble() {
+  return (
+    <Flex justify="flex-start">
+      <Box
+        maxW="85%"
+        px={4}
+        py={3}
+        borderRadius="2xl"
+        bg="white"
+        borderWidth="1px"
+        borderColor="gray.200"
+        boxShadow="sm"
+      >
+        <Text fontSize="sm" fontWeight="semibold" mb={3} color="gray.800">
+          India Spice House
+        </Text>
+        <SkeletonText
+          noOfLines={3}
+          spacing="3"
+          skeletonHeight="3"
+          startColor="gray.100"
+          endColor="gray.200"
+        />
       </Box>
     </Flex>
   );
@@ -297,11 +336,8 @@ function ChatbotPanel({ onClose }) {
           <MessageBubble key={message.id} message={message} />
         ))}
 
-        {isBusy ? (
-          <HStack color="gray.600" spacing={3}>
-            <Spinner size="sm" color="#D92D26" />
-            <Text fontSize="sm">Checking the website information...</Text>
-          </HStack>
+        {isBusy && messages[messages.length - 1]?.role !== "assistant" ? (
+          <LoadingBubble />
         ) : null}
 
         {error ? (

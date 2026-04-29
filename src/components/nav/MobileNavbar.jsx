@@ -6,44 +6,24 @@ import {
   DrawerContent,
   Stack,
 } from "@chakra-ui/react";
-import Link from "next/link";
+import NextLink from "next/link";
+import { orderLink } from "@/lib/siteData";
 
 export const navItems = [
-  {
-    name: "Menu",
-    href: "https://order.toasttab.com/online/india-spice-house-8445-joiner-way",
-  },
+  { name: "Menu", href: "/menu" },
   { name: "Catering", href: "/catering", target: "_self" },
   { name: "Specials", href: "/#specials" },
+  { name: "Gallery", href: "/gallery" },
+  { name: "Blog", href: "/blog" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];
 
-import { useRouter } from "next/router"; // Import useRouter from Next.js
-
 export const MobileDrawer = (props) => {
-  const router = useRouter();
-
-  // Function to handle drawer closing
   const handleCloseDrawer = () => {
     props.onClose();
   };
 
-  // Custom click event handler for the links
-  const handleLinkClick = (href) => (event) => {
-    event.preventDefault(); // Prevent the default link behavior
-    handleCloseDrawer(); // Close the drawer
-    if (href.startsWith("#")) {
-      // Check if the link is an anchor link (e.g., #specials)
-      const id = href.substring(1);
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" }); // Scroll to the anchor
-      }
-    } else {
-      router.push(href); // Navigate to the specified page
-    }
-  };
   return (
     <Drawer placement="top" onClose={handleCloseDrawer} {...props}>
       <DrawerContent>
@@ -51,21 +31,21 @@ export const MobileDrawer = (props) => {
           <Stack spacing="6" align="stretch">
             {navItems.map((item) => (
               <Button
-                as={"a"}
+                as={NextLink}
                 href={item.href}
                 key={item.name}
                 size="lg"
                 variant="text"
                 colorScheme="gray"
                 scrollBehavior={"smooth"}
-                onClick={handleLinkClick(item.href)}
+                onClick={handleCloseDrawer}
               >
                 {item.name}
               </Button>
             ))}
-            <Link
+            <NextLink
               target="_blank"
-              href="https://order.toasttab.com/online/india-spice-house-8445-joiner-way"
+              href={orderLink}
             >
               <Center
                 variant={"unstyled"}
@@ -80,7 +60,7 @@ export const MobileDrawer = (props) => {
               >
                 Order Now
               </Center>
-            </Link>
+            </NextLink>
           </Stack>
         </DrawerBody>
       </DrawerContent>

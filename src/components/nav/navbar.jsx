@@ -10,9 +10,10 @@ import {
 } from "@chakra-ui/react";
 import { MobileDrawer } from "./MobileNavbar";
 import { ToggleButton } from "./ToggleButton";
-import Link from "next/link";
+import NextLink from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
+import { orderLink } from "@/lib/siteData";
 
 export default function Navbar() {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
@@ -21,13 +22,10 @@ export default function Navbar() {
   const MotionImage = motion(Image);
   const MotionButton = motion(Button);
   const navItems = [
-    {
-      name: "menu",
-      href: "https://order.toasttab.com/online/india-spice-house-8445-joiner-way",
-      target: "_blank",
-    },
+    { name: "menu", href: "/menu", target: "_self" },
     { name: "catering", href: "/catering", target: "_self" },
     { name: "specials", href: "/#specials", target: "_self" },
+    { name: "gallery", href: "/gallery", target: "_self" },
     { name: "about", href: "/about", target: "_self" },
     { name: "contact", href: "/contact", target: "_self" },
   ];
@@ -36,17 +34,17 @@ export default function Navbar() {
     <Box bg="#D92D26" position="fixed" zIndex="tooltip" w={"100%"}>
       <Box py={5} px={20}>
         <HStack justify="space-between">
-          <Link href="/">
+          <NextLink href="/">
             <MotionImage
               src="/logo.png"
-              alt="logo"
+              alt="India Spice House logo"
               boxSize="60px"
               cursor={"pointer"}
-              initial={{ opacity: 0 }}
+              initial={{ opacity: 1 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 1 }}
             />
-          </Link>
+          </NextLink>
           {isDesktop ? (
             <HStack spacing="8">
               <ButtonGroup
@@ -60,11 +58,11 @@ export default function Navbar() {
                     _hover={{ color: "#238d1a", transform: "scale(1.1)" }}
                     color={"white"}
                     key={index}
-                    as={"a"}
+                    as={NextLink}
                     href={item.href}
                     textTransform={"capitalize"}
                     target={item.target}
-                    initial={{ opacity: 0 }}
+                    initial={{ opacity: 1 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.3 + index * 0.2, duration: 1 }}
                   >
@@ -84,9 +82,10 @@ export default function Navbar() {
                   transition: "all 0.3s ease",
                 }}
                 as={"a"}
-                href="https://order.toasttab.com/online/india-spice-house-8445-joiner-way"
+                href={orderLink}
                 target="_blank"
-                initial={{ opacity: 0 }}
+                rel="noreferrer"
+                initial={{ opacity: 1 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8, duration: 1 }}
               >

@@ -4,8 +4,6 @@ import {
   Button,
   Flex,
   Heading,
-  HStack,
-  Img,
   Stack,
   Text,
   Center,
@@ -15,6 +13,8 @@ import { HiChevronRight } from "react-icons/hi";
 import Slideshow from "./slideshow";
 
 import { motion } from "framer-motion";
+import { orderLink } from "@/lib/siteData";
+import NextLink from "next/link";
 
 export default function Hero() {
   const MotionHeading = motion(Heading);
@@ -22,7 +22,7 @@ export default function Hero() {
   const MotionButton = motion(Button);
   return (
     <>
-      <Box bg="gray.800"  position="relative">
+      <Box bg="gray.800" position="relative">
         <Center
           textAlign={"center !important"}
           py="32"
@@ -38,11 +38,11 @@ export default function Hero() {
                 fontWeight="extrabold"
                 maxWidth={{ base: "100%", md: "80%" }}
                 mx="auto"
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 1 }}
               >
-                India Spice House, home of the spices
+                Indian Restaurant & Grocery Store in Eden Prairie
               </MotionHeading>
               <MotionText
                 className="hero-subtitle"
@@ -50,13 +50,13 @@ export default function Hero() {
                 fontSize={{ md: "2xl" }}
                 mt="4"
                 mx="auto"
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 1 }}
               >
-                India Spice House has a variety of appetizers, entrees, and lots
-                of sweet desserts. We offer catering services as well as hosting
-                events.
+                India Spice House serves biryani, dosa, curries, tandoori
+                dishes, Indian groceries, and catering for events across the
+                southwest metro.
               </MotionText>
               <Stack
                 direction={{ base: "column", md: "row" }}
@@ -66,7 +66,7 @@ export default function Hero() {
               >
                 <MotionButton
                   as="a"
-                  href="https://order.toasttab.com/online/india-spice-house-8445-joiner-way"
+                  href={orderLink}
                   target="_blank"
                   colorScheme="red"
                   px="8"
@@ -75,7 +75,7 @@ export default function Hero() {
                   fontSize="md"
                   fontWeight="bold"
                   className="hero-btn"
-                  initial={{ opacity: 0, y: 50 }}
+                  initial={{ opacity: 1, y: 0 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6, duration: 1 }}
                 >
@@ -83,6 +83,22 @@ export default function Hero() {
                     Eat with us today
                   </span>
                   <HiChevronRight />
+                </MotionButton>
+                <MotionButton
+                  as={NextLink}
+                  href="/menu"
+                  colorScheme="whiteAlpha"
+                  px="8"
+                  rounded="full"
+                  size="lg"
+                  fontSize="md"
+                  fontWeight="bold"
+                  className="hero-btn"
+                  initial={{ opacity: 1, y: 0 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.75, duration: 1 }}
+                >
+                  Browse Menu
                 </MotionButton>
               </Stack>
             </Box>

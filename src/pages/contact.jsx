@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import Head from "next/head";
 
 import {
   Box,
@@ -16,23 +15,10 @@ import {
   useToast,
   Spinner,
 } from "@chakra-ui/react";
-import { FaUser } from "react-icons/fa";
-import NextLink from "next/link";
-import {
-  BsGithub,
-  BsDiscord,
-  BsPerson,
-  BsWhatsapp,
-  BsFillExclamationDiamondFill,
-} from "react-icons/bs";
-
-import {
-  MdPhone,
-  MdEmail,
-
-  MdFacebook,
-  
-} from "react-icons/md";
+import { BsWhatsapp } from "react-icons/bs";
+import { MdPhone, MdEmail, MdFacebook } from "react-icons/md";
+import Seo from "@/components/Seo";
+import { businessInfo } from "@/lib/siteData";
 
 export default function Contact() {
   const [values, setValues] = useState({
@@ -51,40 +37,50 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    await fetch("https://www.indiaspicehouseep.com/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(values),
-    });
-    setValues({ name: "", email: "", message: "" });
-    setIsLoading(false);
 
-    toast({
-      title: "Message Sent",
-      description: "We will get back to you as soon as possible.",
-      status: "success",
-      duration: 3500,
-      isClosable: true,
-    });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        throw new Error("Contact API failed");
+      }
+
+      setValues({ name: "", email: "", message: "" });
+      setIsLoading(false);
+
+      toast({
+        title: "Message Sent",
+        description: "We will get back to you as soon as possible.",
+        status: "success",
+        duration: 3500,
+        isClosable: true,
+      });
+    } catch {
+      setIsLoading(false);
+      toast({
+        title: "Message not sent",
+        description:
+          "Please call or email India Spice House directly and try again later.",
+        status: "error",
+        duration: 3500,
+        isClosable: true,
+      });
+    }
   };
 
   return (
     <>
-      <Head>
-        <title>India Spice House | Contact</title>
-        <meta
-          name="description"
-          content="India Spice House is available for any inquiries. Contact us today!"
-        />
-        <meta
-          name="keywords"
-          content="Indian restaurant in Eden Prairie, Indian grocery store in Eden Prairie, Best Indian cuisine in Eden Prairie, Indian catering services in Eden Prairie, Private event hosting in Eden Prairie, India Spice House Eden Prairie, Gourmet Indian food in Eden Prairie, Indian food delivery in Eden Prairie, Authentic Indian spices in Eden Prairie, Eden Prairie Indian food specials, India Spice House Grocery, Indian Grocery near me, Grocery store"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/logo.png" />
-      </Head>
+      <Seo
+        title="Contact India Spice House in Eden Prairie"
+        description="Contact India Spice House in Eden Prairie, MN for restaurant orders, grocery questions, catering inquiries, pickup, delivery, and general questions."
+        path="/contact"
+      />
       <Box p={10} minH={"80vh"} pt={"180px !important"}>
         <Box mt={["100px", 0]}>
           <SimpleGrid
@@ -108,8 +104,32 @@ export default function Contact() {
                   color="gray.600"
                   textAlign={"center"}
                 >
-                  Fill out the form to contact
+                  Call, email, message us on WhatsApp, or send a note below.
                 </Text>
+                <Stack spacing={1} align="center" mt={4} color="gray.700">
+                  <Text>
+                    Restaurant:{" "}
+                    <Box as="a" href="tel:9529428010" color="#D92D26">
+                      {businessInfo.restaurantPhone}
+                    </Box>
+                  </Text>
+                  <Text>
+                    Grocery:{" "}
+                    <Box as="a" href="tel:9529427510" color="#D92D26">
+                      {businessInfo.groceryPhone}
+                    </Box>
+                  </Text>
+                  <Text>
+                    Email:{" "}
+                    <Box
+                      as="a"
+                      href={`mailto:${businessInfo.email}`}
+                      color="#D92D26"
+                    >
+                      {businessInfo.email}
+                    </Box>
+                  </Text>
+                </Stack>
                 <Box textAlign={"center"}>
                   <IconButton
                     className="contact-icon"
@@ -121,7 +141,7 @@ export default function Contact() {
                     isRound={true}
                     _hover={{ color: "#D92D26" }}
                     icon={<MdFacebook size="28px" />}
-                    href="https://www.facebook.com/indiaspicehouseep"
+                    href={businessInfo.facebook}
                   />
 
                   <IconButton
@@ -133,12 +153,12 @@ export default function Contact() {
                     isRound={true}
                     _hover={{ color: "#D92D26" }}
                     icon={<BsWhatsapp size="28px" />}
-                    href="https://wa.me/16122937478"
+                    href={`https://wa.me/${businessInfo.whatsappPhone}`}
                   />
                   <IconButton
                     className="contact-icon"
                     as="a"
-                    aria-label="whatsapp"
+                    aria-label="phone"
                     variant="ghost"
                     size="lg"
                     isRound={true}
@@ -149,14 +169,13 @@ export default function Contact() {
                   <IconButton
                     className="contact-icon"
                     as="a"
-                    aria-label="whatsapp"
+                    aria-label="email"
                     variant="ghost"
                     size="lg"
                     isRound={true}
                     _hover={{ color: "#D92D26" }}
                     icon={<MdEmail size="28px" />}
-                    href="mailto:indiaspicehouseep@gmail.com
-                    "
+                    href={`mailto:${businessInfo.email}`}
                   />
                 </Box>
               </Box>

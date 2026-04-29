@@ -445,6 +445,27 @@ export default function ChatbotWidget() {
         _active={{ bg: "#a6221c" }}
         onClick={isOpen ? onClose : onOpen}
       />
+      {!isOpen ? (
+        <Box
+          position="fixed"
+          right={{ base: 20, md: 24 }}
+          bottom={{ base: 7, md: 9 }}
+          zIndex="popover"
+          bg="white"
+          color="gray.800"
+          borderRadius="full"
+          px={4}
+          py={2}
+          boxShadow="md"
+          borderWidth="1px"
+          borderColor="gray.200"
+          display={{ base: "none", sm: "block" }}
+        >
+          <Text fontSize="sm" fontWeight="semibold">
+            Ask about hours, menu, or catering
+          </Text>
+        </Box>
+      ) : null}
 
       <Drawer
         isOpen={Boolean(isMobile && isOpen)}

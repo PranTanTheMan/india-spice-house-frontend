@@ -9,32 +9,9 @@ import {
   Box,
   SimpleGrid,
 } from "@chakra-ui/react";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { businessInfo, orderLink } from "@/lib/siteData";
 
 export default function Delivery() {
-  const data = [
-    {
-      id: 1,
-      img: "/grubhub.png",
-      href: "https://www.grubhub.com/restaurant/india-spice-house-8445-joiner-way-eden-prairie/336713?proof=true",
-    },
-    {
-      id: 2,
-      img: "/doordash.png",
-      href: "https://www.doordash.com/store/india-spice-house-eden-prairie-27642/20011012/",
-    },
-    {
-      id: 3,
-      img: "/ubereats.png",
-      href: "https://www.ubereats.com/store/india-spice-house-restaurant/Cy76oYVZTLWsC0uR9qOAnA?diningMode=DELIVERY&ps=1",
-    },
-  ];
-
-  const { ref, inView } = useInView({
-    triggerOnce: true, // Trigger the animation only once
-    threshold: 0.1, // Trigger the animation when 10% of the component is in view
-  });
   return (
     <>
       <Center mb={"2rem"} mt={"7rem"} flexDirection={"column"}>
@@ -44,7 +21,7 @@ export default function Delivery() {
           Pick-up available{" "}
           <Link
             color="#238d1a"
-            href="https://order.toasttab.com/online/india-spice-house-8445-joiner-way"
+            href={orderLink}
             target="_blank"
           >
             here
@@ -75,9 +52,9 @@ export default function Delivery() {
           mb={"75px"}
           mx={{ base: "15px", lg: "150px" }}
         >
-          {data.map((item) => (
+          {businessInfo.deliveryLinks.map((item) => (
             <Center
-              key={item.id}
+              key={item.name}
               bg="#f1f1f1"
               py={{
                 base: "4",
@@ -93,13 +70,13 @@ export default function Delivery() {
               target="_blank"
             >
               <Image
-                src={item.img}
+                src={item.logo}
                 h={{
                   base: "8",
                   md: "10",
                 }}
                 maxW="180px"
-                alt="image"
+                alt={`${item.name} delivery for India Spice House`}
               />
             </Center>
           ))}

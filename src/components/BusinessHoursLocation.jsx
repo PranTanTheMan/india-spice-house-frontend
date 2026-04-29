@@ -116,7 +116,7 @@ export default function BusinessHoursLocation() {
                     </Text>
                     <Text textAlign="left">
                       <chakra.span fontWeight={"bold"}>
-                        Satuday - Sunday:{" "}
+                        Saturday - Sunday:{" "}
                       </chakra.span>
                       11:30 AM - 3:30 PM
                     </Text>
@@ -139,7 +139,7 @@ export default function BusinessHoursLocation() {
                     </Text>
                     <Text textAlign="left">
                       <chakra.span fontWeight={"bold"}>
-                        Friday - Satuday:{" "}
+                        Friday - Saturday:{" "}
                       </chakra.span>
                       5:00 PM - 10:00 PM
                     </Text>
@@ -160,6 +160,7 @@ export default function BusinessHoursLocation() {
             <Heading pb={"0px"}>Location</Heading>
             <Box w="70px" h="2px" bg="black" mt={"3px"} mb={"20px"} />
             <iframe
+              title="India Spice House location map"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2828.587512577134!2d-93.43395318756629!3d44.85033307094981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f61890d241f0d7%3A0x570098934ad61f71!2sIndia%20Spice%20House%20-%20Indian%20Restaurant%20and%20Grocery%20in%20Eden%20Prairie%2C%20MN!5e0!3m2!1sen!2sus!4v1689617884306!5m2!1sen!2sus"
               width="300"
               height="300"

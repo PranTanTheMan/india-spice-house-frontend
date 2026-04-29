@@ -7,8 +7,11 @@ import {
   Text,
   Image,
   chakra,
+  HStack,
 } from "@chakra-ui/react";
 import { FaFacebookSquare, FaWhatsapp } from "react-icons/fa";
+import NextLink from "next/link";
+import { businessInfo } from "@/lib/siteData";
 
 export default function Footer() {
   return (
@@ -16,10 +19,10 @@ export default function Footer() {
       <Box py={{ base: "11", md: "3rem" }} px={{ base: "10", md: "24" }}>
         <Stack spacing={{ base: "4", md: "5" }}>
           <Stack justify="space-between" direction="row" align="center">
-            <Link href="/" aria-label="Back to homepage">
+            <Link as={NextLink} href="/" aria-label="Back to homepage">
               <Image
                 src="/logo.png"
-                alt="logo"
+                alt="India Spice House logo"
                 boxSize="60px"
                 transition={"all 0.35s ease "}
               />
@@ -27,9 +30,9 @@ export default function Footer() {
             <ButtonGroup variant={"tertiary.accent"}>
               <IconButton
                 as="a"
-                href="https://www.facebook.com/indiaspicehouseep"
+                href={businessInfo.facebook}
                 target="_blank"
-                aria-label="Face"
+                aria-label="India Spice House on Facebook"
                 icon={<FaFacebookSquare size={"25px"} />}
                 color={"#ffa500"}
                 transition={"all 0.2s ease"}
@@ -38,9 +41,9 @@ export default function Footer() {
 
               <IconButton
                 as="a"
-                href="https://wa.me/16122937478"
+                href={`https://wa.me/${businessInfo.whatsappPhone}`}
                 target="_blank"
-                aria-label="Twitter"
+                aria-label="Message India Spice House on WhatsApp"
                 icon={<FaWhatsapp size={"25px"} />}
                 color={"#ffa500"}
                 _hover={{ color: "#d77c1c" }}
@@ -74,13 +77,54 @@ export default function Footer() {
             </Text>
             <Stack direction={"column"} spacing={3}>
               <Link href="tel:9529427510" fontSize="sm" color="white">
-                Grocery: (952) 942-7510
+                Grocery: {businessInfo.groceryPhone}
               </Link>
               <Link href="tel:9529428010" fontSize="sm" color="white">
-                Restaurant: (952) 942-8010
+                Restaurant: {businessInfo.restaurantPhone}
+              </Link>
+              <Link
+                href={`mailto:${businessInfo.email}`}
+                fontSize="sm"
+                color="white"
+              >
+                Email: {businessInfo.email}
+              </Link>
+              <Link
+                href={`https://wa.me/${businessInfo.whatsappPhone}`}
+                target="_blank"
+                fontSize="sm"
+                color="white"
+              >
+                WhatsApp: message us
               </Link>
             </Stack>
           </Stack>
+          <HStack
+            as="nav"
+            aria-label="Footer navigation"
+            spacing={{ base: 3, md: 6 }}
+            justify="center"
+            flexWrap="wrap"
+          >
+            {[
+              { label: "Menu", href: "/menu" },
+              { label: "Specials", href: "/#specials" },
+              { label: "Gallery", href: "/gallery" },
+              { label: "Blog", href: "/blog" },
+              { label: "Catering", href: "/catering" },
+              { label: "Contact", href: "/contact" },
+            ].map((item) => (
+                <Link
+                  key={item.label}
+                  as={NextLink}
+                  href={item.href}
+                  color="white"
+                  fontSize="sm"
+                >
+                  {item.label}
+                </Link>
+              ))}
+          </HStack>
         </Stack>
       </Box>
     </Box>

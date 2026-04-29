@@ -1,5 +1,6 @@
 import React from "react";
 import { Flex, Box, Image, chakra } from "@chakra-ui/react";
+import { orderLink } from "@/lib/siteData";
 
 export default function PopularItemsCard() {
   const products = [
@@ -59,7 +60,7 @@ export default function PopularItemsCard() {
               fit="cover"
               mt={2}
               src={product.image}
-              alt="popular-item"
+              alt={`${product.name} at India Spice House`}
             />
 
             <Flex
@@ -77,7 +78,7 @@ export default function PopularItemsCard() {
               _hover={{ bg: "#238d1a" }}
               transition={"all .3s ease"}
               as={"a"}
-              href="https://order.toasttab.com/online/india-spice-house-8445-joiner-way"
+              href={orderLink}
               target="_blank"
             >
               Order Now

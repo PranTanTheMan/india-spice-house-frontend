@@ -7,6 +7,7 @@ const businessInfo = {
   groceryPhone: "(952) 942-7510",
   email: "indiaspicehouseep@gmail.com",
   contactPage: "https://www.indiaspicehouseep.com/contact",
+  menuPage: "https://www.indiaspicehouseep.com/menu",
   pickupLink:
     "https://order.toasttab.com/online/india-spice-house-8445-joiner-way",
   deliveryLinks: {
@@ -44,7 +45,12 @@ const faq = [
   {
     question: "How do I place an order for pickup?",
     answer:
-      "Pickup orders should be placed through the ToastTab link on the website.",
+      "Guests can browse the website menu, then place pickup orders through the ToastTab link on the website.",
+  },
+  {
+    question: "Where can I see the menu?",
+    answer:
+      "Guests can browse menu categories on the website menu page and use ToastTab for current availability and ordering.",
   },
   {
     question: "Do you offer delivery?",
@@ -99,6 +105,7 @@ Business facts:
 - Grocery phone: ${businessInfo.groceryPhone}
 - Email: ${businessInfo.email}
 - Contact page: ${businessInfo.contactPage}
+- Website menu page: ${businessInfo.menuPage}
 - Pickup ordering: ${businessInfo.pickupLink}
 - Catering menu page: ${businessInfo.catering.menuPdf}
 - Catering application: ${businessInfo.catering.application}

@@ -1,10 +1,7 @@
 import {
-  Badge,
   Box,
   Button,
-  Container,
   Heading,
-  Img,
   Stack,
   Text,
   chakra,
@@ -17,6 +14,7 @@ import { motion } from "framer-motion";
 
 import Slideshow from "./slideshow";
 import React from "react";
+import { orderLink } from "@/lib/siteData";
 
 export default function AboutHero() {
   const MotionHeading = motion(Heading);
@@ -40,7 +38,7 @@ export default function AboutHero() {
               fontWeight="extrabold"
               maxWidth={{ base: "100%", md: "80%" }}
               mx="auto"
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 1 }}
             >
@@ -59,7 +57,7 @@ export default function AboutHero() {
               fontSize={{ md: "2xl" }}
               mt="4"
               mx="auto"
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 1 }}
             >
@@ -74,7 +72,7 @@ export default function AboutHero() {
             >
               <MotionButton
                 as="a"
-                href="https://order.toasttab.com/online/india-spice-house-8445-joiner-way"
+                href={orderLink}
                 target="_blank"
                 colorScheme="red"
                 px="8"
@@ -83,7 +81,7 @@ export default function AboutHero() {
                 fontSize="md"
                 fontWeight="bold"
                 className="hero-btn"
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 1 }}
               >
@@ -103,7 +101,7 @@ export default function AboutHero() {
                 cursor={"pointer"}
                 href={"#learn"}
                 className="hero-btn"
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 1 }}
               >
